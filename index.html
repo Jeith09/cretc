@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CRETC Website Proposal</title>
+<meta name="description" content="Sample website, reviewee portal and quotation prepared for Chain Rinivarts Educational Training Center. For proposal purposes only.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1A47">
+<link rel="icon" href="media/mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Schibsted+Grotesk:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#0B1A47; --deep-2:#14296E; --royal:#1D44B8; --on-deep:#FFFFFF; --on-deep-2:#C7D1EC;
+  --bg:#F3F5FA; --bg-2:#E6EBF5; --surface:#FFFFFF; --ink:#0E1630; --ink-2:#3E4766; --line:#CBD3E6;
+  --gold:#F5B10C; --gold-hi:#FFC533; --on-gold:#1A1300; --gold-text:#7A5200; --gold-wash:#FDF0CC;
+  --ok:#1E7A46; --bad:#B42318;
+  --disp:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --sans:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --strip:30px; --bar:60px; --top:calc(var(--strip) + var(--bar));
+}
+/* colors for the SAMPLE WEBSITE only (the proposal itself never changes) */
+.frame,.frame[data-mtheme="royal"]{
+  --mline:rgba(14,22,48,.12);
+  --deep:#0B1D55; --deep-2:#14296E; --on-deep:#FFFFFF; --on-deep-2:#C9D3EE; --foot:#071338;
+  --surface:#FFFFFF; --bg-2:#EEF2FA; --ink:#0E1630; --ink-2:#44506E;
+  --gold:#F5B10C; --gold-hi:#FFC533; --on-gold:#1A1300; --gold-text:#7A5200;
+}
+.frame[data-mtheme="midnight"]{
+  --mline:rgba(255,255,255,.12);
+  --deep:#080D1C; --deep-2:#121A30; --on-deep:#F2F4FA; --on-deep-2:#AFBAD6; --foot:#04070F;
+  --surface:#0E1426; --bg-2:#161F38; --ink:#EEF1F8; --ink-2:#AFBAD6;
+  --gold:#F7B924; --gold-hi:#FFCB4D; --on-gold:#161004; --gold-text:#F7C548;
+}
+.frame[data-mtheme="sky"]{
+  --mline:rgba(13,24,56,.12);
+  --deep:#1747B5; --deep-2:#2457CC; --on-deep:#FFFFFF; --on-deep-2:#E1E9FF; --foot:#0E2E7A;
+  --surface:#FFFFFF; --bg-2:#EDF3FF; --ink:#0D1838; --ink-2:#435079;
+  --gold:#FFB81C; --gold-hi:#FFC94D; --on-gold:#1A1300; --gold-text:#7A5200;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--top) + 12px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--disp);font-weight:700;margin:0;line-height:1.02;letter-spacing:-.005em}
+h2{font-size:clamp(38px,4.6vw,60px)}
+p{margin:0}
+.cur{font-family:var(--sans);font-weight:600;font-size:.62em;margin-right:.08em;vertical-align:.12em}
+.intro-line{font-size:clamp(16px,1.25vw,18px);color:var(--ink-2);max-width:52ch;margin-top:14px;line-height:1.55}
+section{padding:88px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:12px 22px;font-weight:650;font-size:15px;text-decoration:none;line-height:1.2;transition:background .2s,box-shadow .2s,color .2s}
+.btn-gold{background:var(--gold);color:var(--on-gold)}
+.btn-gold:hover{background:var(--gold-hi)}
+.btn-line{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+.btn-line:hover{box-shadow:inset 0 0 0 2.5px currentColor}
+.btn-quiet{background:var(--bg-2);color:var(--ink)}
+.btn-quiet:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-navy{background:var(--deep);color:var(--on-deep)}
+.btn-navy:hover{background:var(--deep-2)}
+.deep{background:var(--deep);color:var(--on-deep)}
+.deep .intro-line{color:var(--on-deep-2)}
+
+/* ============ OPENING ============ */
+#intro{position:fixed;inset:0;z-index:100;background:#0B1A47;background:linear-gradient(125deg,#06112F 0%,#0F2A78 26%,#1D44B8 42%,#0B1A47 58%,#3A2A06 78%,#0A1640 100%);background-size:320% 320%;animation:drift 14s ease-in-out infinite alternate;color:var(--on-deep);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .8s ease,visibility .8s;overflow:auto}
+#intro.gone{opacity:0;visibility:hidden}
+#intro .crest{margin:0 auto;width:104px;height:104px;padding:14px;object-fit:contain;background:#fff;border-radius:24px;box-shadow:0 18px 40px rgba(0,0,0,.35);opacity:0;transform:scale(.86) rotate(-6deg);animation:crestIn 1.3s .2s cubic-bezier(.2,.7,.2,1) forwards}
+#intro .rule{width:0;height:3px;background:var(--gold);margin:28px auto 22px;animation:rule 1.1s 1s ease forwards}
+#intro .word{font-family:var(--disp);font-weight:800;font-size:clamp(42px,7.5vw,84px);letter-spacing:.05em;line-height:.95;opacity:0;animation:up .9s 1.3s ease forwards}
+#intro .sub{font-family:var(--disp);font-weight:600;font-size:clamp(15px,2vw,20px);letter-spacing:.24em;color:var(--gold);margin-top:10px;opacity:0;animation:up .9s 1.6s ease forwards}
+#intro .greet{font-size:clamp(19px,2.3vw,24px);margin-top:34px;line-height:1.4;font-weight:500;opacity:0;animation:up .9s 2.1s ease forwards}
+#intro .greet b{font-weight:700}
+#intro .inote{font-size:14.5px;color:var(--on-deep-2);max-width:46ch;margin:16px auto 0;line-height:1.5;opacity:0;animation:up .9s 2.4s ease forwards}
+#intro .acts{margin-top:28px;opacity:0;animation:up .8s 2.7s ease forwards}
+#intro .skip{position:absolute;top:18px;right:20px;background:none;border:0;color:var(--on-deep-2);font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+#intro::before{content:"";position:absolute;width:70vmax;height:70vmax;left:50%;top:50%;margin:-35vmax 0 0 -35vmax;background:radial-gradient(circle,rgba(245,177,12,.18),transparent 62%);animation:glow 10s ease-in-out infinite alternate;pointer-events:none}
+#intro > div{position:relative}
+@keyframes crestIn{to{opacity:1;transform:none}}
+@keyframes rule{to{width:min(280px,60vw)}}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes drift{0%{background-position:0% 40%}100%{background-position:100% 60%}}
+@keyframes glow{0%{transform:translate(-14%,-8%) scale(.9)}100%{transform:translate(14%,10%) scale(1.1)}}
+
+/* ============ TOP BAR ============ */
+.top{position:fixed;top:0;left:0;right:0;z-index:40;color:var(--on-deep)}
+.strip{height:var(--strip);background:var(--gold);color:var(--on-gold);font-size:13.5px;font-weight:600;display:flex;align-items:center;justify-content:center;padding:0 12px;text-align:center;white-space:nowrap;overflow:hidden}
+.strip .long{display:inline}.strip .short{display:none}
+@media (max-width:760px){.strip .long{display:none}.strip .short{display:inline}}
+@media (max-width:370px){.strip{font-size:12.5px;padding:0 8px}}
+.bar{height:var(--bar);background:var(--deep);background:color-mix(in srgb,var(--deep) 93%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);position:relative}
+.bar .wrap{height:100%;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand i{width:36px;height:36px;border-radius:10px;background:#fff;display:grid;place-items:center;flex:none}
+.brand img{width:24px;height:30px;object-fit:contain}
+.brand b{font-family:var(--disp);font-weight:800;letter-spacing:.06em;font-size:20px;line-height:1}
+.top nav{display:flex;gap:4px;margin-left:auto}
+.top nav a{text-decoration:none;font-size:14.5px;color:var(--on-deep-2);padding:8px 12px;border-radius:999px;transition:color .2s,background .2s}
+.top nav a:hover{color:var(--on-deep)}
+.top nav a.now{color:var(--on-deep);background:rgba(255,255,255,.1)}
+.progress{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--gold);transform-origin:0 50%;transform:scaleX(0)}
+@media (max-width:900px){.top nav{display:none}}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:calc(var(--top) + 60px) 0 72px;color:var(--on-deep);overflow:hidden;background:var(--deep);background:radial-gradient(ellipse 55% 65% at 80% 40%,rgba(29,68,184,.55),transparent 70%),radial-gradient(ellipse 40% 40% at 70% 90%,rgba(245,177,12,.12),transparent 70%),linear-gradient(160deg,#0F2263,#0A1640 70%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 560px;gap:56px;align-items:center}
+.hero .for{font-size:15.5px;color:var(--on-deep-2);line-height:1.5}
+.hero .for b{color:#fff;font-weight:650}
+.hero h1{font-size:clamp(44px,5.4vw,74px);margin:20px 0 0;max-width:13ch;line-height:.98}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{color:var(--on-deep-2);font-size:17px;max-width:46ch;margin-top:20px}
+.hero-foot{display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-top:32px}
+.hero-meta{display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:var(--on-deep-2)}
+.hero-meta b{display:block;color:#fff;font-size:15px;font-weight:600}
+.stage-wrap{position:relative;width:100%;min-width:0;max-width:560px}
+.hstage{position:relative;width:560px;height:500px;transform-origin:0 0;--mx:0;--my:0}
+.card{position:absolute;margin:0;border-radius:12px;overflow:hidden;background:#0A1640;box-shadow:0 26px 50px -20px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.1);
+  transform:translate(calc(var(--mx)*var(--d)*1px),calc(var(--my)*var(--d)*1px)) rotate(var(--r)) scale(var(--s,1));transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .3s;outline-offset:4px}
+.card img,.card video{width:100%;height:100%;object-fit:cover}
+.card.tap{cursor:pointer}
+.card.tap:hover,.card.tap:focus-visible,.card.front{--r:0deg;--s:1.05;z-index:20!important;box-shadow:0 34px 60px -20px rgba(0,0,0,.85)}
+.c-vid{left:0;top:84px;width:452px;height:262px;--r:-1.5deg;--d:8;z-index:4;box-shadow:0 30px 60px -20px rgba(0,0,0,.8),0 0 0 3px rgba(245,177,12,.85)}
+.c-p1{right:0;top:0;width:176px;height:176px;--r:5deg;--d:16;z-index:3}
+.c-p2{right:22px;top:298px;width:190px;height:190px;--r:-4deg;--d:20;z-index:5}
+.c-stat{left:26px;top:372px;width:300px;padding:16px 20px 16px;background:var(--gold);color:var(--on-gold);--r:2deg;--d:12;z-index:6;overflow:visible}
+.c-stat .row{display:flex;gap:22px}
+.c-stat b{display:block;font-family:var(--disp);font-weight:800;font-size:44px;line-height:1}
+.c-stat small{display:block;font-weight:700;font-size:13px}
+.c-stat p{font-size:13px;font-weight:600;margin-top:8px;line-height:1.35}
+.vid-btn{position:absolute;left:12px;bottom:12px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:rgba(6,12,32,.72);color:#fff;display:grid;place-items:center}
+.vid-btn svg{width:16px;height:16px}
+.vid-tag{position:absolute;right:12px;top:12px;z-index:2;background:rgba(6,12,32,.72);color:#fff;font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:999px}
+.stage-note{text-align:right;margin-top:12px;font-size:14px;color:var(--on-deep-2)}
+.hero.in .card{animation:land .8s cubic-bezier(.2,.7,.2,1) both}
+.hero.in .c-p1{animation-delay:.12s}.hero.in .c-p2{animation-delay:.24s}.hero.in .c-stat{animation-delay:.36s}
+@keyframes land{from{opacity:0;translate:0 -36px}to{opacity:1;translate:0 0}}
+.ribbon{background:var(--deep-2);color:var(--on-deep);overflow:hidden;white-space:nowrap;border-top:1px solid rgba(255,255,255,.08)}
+.ribbon .track{display:inline-flex;padding:13px 0;animation:slide 52s linear infinite}
+.ribbon span{font-family:var(--disp);font-weight:600;font-size:21px;letter-spacing:.04em;text-transform:uppercase;padding:0 22px}
+.ribbon i{color:var(--gold);font-style:normal;font-size:12px;vertical-align:4px}
+.ribbon:hover .track{animation-play-state:paused}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (max-width:1060px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px}}
+@media (max-width:860px){.hero{padding:calc(var(--top) + 40px) 0 56px}.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px}.stage-note{text-align:left}}
+
+/* ============ FIT ============ */
+.fit-sec{background:var(--surface)}
+.fit-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end}
+.fit{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;counter-reset:f}
+.fit li{counter-increment:f}
+.fit li::before{content:"0" counter(f);display:block;font-family:var(--disp);font-weight:800;font-size:44px;line-height:1;color:var(--gold-text)}
+.fit .was{color:var(--ink-2);font-size:14.5px;margin-top:12px}
+.fit .now{font-family:var(--disp);font-weight:700;font-size:24px;line-height:1.1;margin-top:8px}
+@media (max-width:1000px){.fit{grid-template-columns:1fr 1fr}}
+@media (max-width:860px){.fit-head{grid-template-columns:1fr;gap:0}}
+@media (max-width:520px){.fit{grid-template-columns:1fr;gap:28px}.fit li{display:grid;grid-template-columns:52px 1fr;column-gap:12px}.fit li::before{grid-row:span 2;font-size:36px}.fit .was{margin-top:0}}
+
+/* ============ DESIGN ============ */
+.design-sec{background:var(--bg)}
+.toggle{display:inline-flex;background:var(--bg-2);border-radius:999px;padding:5px}
+.toggle button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-weight:600;font-size:14.5px;color:var(--ink-2)}
+.toggle button[aria-pressed=true]{background:var(--deep);color:var(--on-deep)}
+.stage{margin-top:22px;display:flex;justify-content:center}
+.d-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:28px}
+@media (max-width:760px){.d-bar{flex-direction:column;align-items:stretch}.seg{justify-content:space-between}.seg button{flex:1;padding:8px 6px}.d-controls{justify-content:space-between}}
+.frame{width:100%;max-width:1200px;background:var(--surface);border-radius:14px;overflow:hidden;box-shadow:0 40px 80px -40px rgba(8,14,40,.55),0 0 0 1px rgba(8,14,40,.1);transition:max-width .5s ease,border-radius .5s}
+.frame.phone{max-width:390px;border-radius:36px;box-shadow:0 0 0 11px #0A1028,0 40px 70px -24px rgba(8,14,40,.6)}
+.chrome{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#ECEFF5;border-bottom:1px solid #D7DDEA;color:#4E5A78}
+.chrome i{width:12px;height:12px;border-radius:50%;background:#C6CDDD;display:block;flex:none}
+.chrome .url{flex:1;min-width:0;margin-left:10px;background:#fff;border-radius:6px;padding:6px 14px;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chrome .lock{width:13px;height:13px;flex:none;margin-right:6px;vertical-align:-1px}
+.frame.phone .chrome i{display:none}
+.frame.phone .mk-wrap{max-height:700px;overflow-y:auto}
+.seg{display:inline-flex;background:var(--deep);border-radius:999px;padding:5px}
+.seg button{border:0;background:transparent;color:var(--on-deep-2);padding:8px 16px;border-radius:999px;font-weight:600;font-size:14.5px}
+.seg button[aria-pressed=true]{background:var(--gold);color:var(--on-gold)}
+.notes-btn{display:flex;align-items:center;gap:9px;border:0;background:var(--bg-2);border-radius:999px;padding:8px 14px 8px 8px;font-weight:600;font-size:14.5px;color:var(--ink-2)}
+.notes-btn i{width:34px;height:20px;border-radius:999px;background:#A9B2C8;position:relative;transition:background .2s}
+.notes-btn i::after{content:"";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform .2s}
+.notes-btn[aria-pressed=true]{color:var(--ink)}
+.notes-btn[aria-pressed=true] i{background:var(--gold)}
+.notes-btn[aria-pressed=true] i::after{transform:translateX(14px)}
+.d-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.swatches{display:flex;gap:6px;align-items:center;background:var(--bg-2);border-radius:999px;padding:5px 6px 5px 14px}
+.swatches span{font-size:14px;font-weight:600;color:var(--ink-2);margin-right:4px}
+.swatches button{display:flex;align-items:center;gap:8px;border:0;background:transparent;border-radius:999px;padding:5px 12px 5px 5px;font-weight:600;font-size:14px;color:var(--ink-2)}
+.swatches button[aria-pressed=true]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.swatches i{width:22px;height:22px;border-radius:50%;display:block;position:relative;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.swatches i::after{content:"";position:absolute;right:-2px;bottom:-2px;width:10px;height:10px;border-radius:50%;background:var(--sw);box-shadow:0 0 0 2px var(--bg-2)}
+.sw-royal{background:#0B1D55}.sw-midnight{background:#080D1C}.sw-sky{background:#1747B5}
+.note-line{text-align:center;max-width:64ch;margin:30px auto 0;font-size:16px;line-height:1.6;color:var(--ink)}
+.note-line b{color:var(--gold-text);font-weight:700}
+@media (max-width:640px){.swatches span{display:none}.swatches button{padding:5px 8px 5px 5px;font-size:13.5px}}
+@media (max-width:400px){.swatches{padding:5px}.swatches button{padding:5px}.swatches button b{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}
+
+/* mock site */
+.mk{position:relative;container-type:inline-size;font-family:var(--sans);font-size:16px;color:var(--ink);background:var(--surface);line-height:1.5;overflow-wrap:break-word;transition:background .35s,color .35s}
+.mk-contact>div,.mk-adm>div,.mk-foot>div,.mk-prow>div,.mk-dir>div{min-width:0}
+.mk button{font:inherit;cursor:pointer}
+.mk h4,.mk h5,.mk h6{font-family:var(--disp);font-weight:700;margin:0;line-height:1.02}
+.mk-nav{position:relative;display:flex;align-items:center;gap:12px;padding:12px 32px;background:var(--deep);color:var(--on-deep);transition:background .35s}
+.mk-badge{width:42px;height:42px;border-radius:12px;background:#fff;display:grid;place-items:center;flex:none}
+.mk-badge img{width:28px;height:34px;object-fit:contain}
+.mk-brand b{display:block;font-family:var(--disp);font-weight:800;letter-spacing:.05em;font-size:22px;line-height:1}
+.mk-brand small{display:block;font-family:var(--disp);font-weight:600;font-size:12px;color:var(--gold);letter-spacing:.16em;margin-top:3px}
+.mk-links{margin-left:auto;display:flex;gap:20px;font-size:15px;color:var(--on-deep-2)}
+.mk-links button{border:0;background:none;padding:0;color:inherit}
+.mk-links .on{color:var(--on-deep);box-shadow:0 2px 0 var(--gold)}
+.mk-cta{border:0;background:var(--gold);color:var(--on-gold);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:700}
+.mk-burger{display:none;margin-left:auto;width:26px}
+.mk-burger i{display:block;height:2px;background:var(--on-deep);margin:5px 0}
+.mk-hero{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:480px;background:var(--deep);color:var(--on-deep);transition:background .35s}
+.mk-hero-img{width:100%;height:100%;min-height:360px;object-fit:cover;object-position:40% 30%}
+.mk-hero-copy{padding:52px 44px;display:flex;flex-direction:column;justify-content:center}
+.mk-hero-copy .c2{font-family:var(--disp);font-weight:700;font-size:14px;letter-spacing:.16em;color:var(--gold)}
+.mk-hero-copy h4{font-size:58px;line-height:.96;margin-top:14px;text-transform:uppercase}
+.mk-hero-copy h4 em{font-style:italic;color:var(--gold)}
+.mk-hero-p{color:var(--on-deep-2);font-size:16px;margin-top:16px;max-width:42ch}
+.mk-btns{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.mk-btns button{border:0;padding:11px 20px;border-radius:999px;font-size:15px;font-weight:700;background:transparent;color:inherit}
+.mk-btns .a{background:var(--gold);color:var(--on-gold)}
+.mk-btns .b{box-shadow:inset 0 0 0 1.5px currentColor}
+.mk-facts{position:relative;display:grid;grid-template-columns:repeat(4,1fr);background:var(--bg-2)}
+.mk-facts div{padding:22px 28px;border-left:1px solid var(--mline)}
+.mk-facts div:first-child{border-left:0}
+.mk-facts b{display:block;font-family:var(--disp);font-weight:800;font-size:40px;line-height:1;color:var(--gold-text)}
+.mk-facts span{font-size:14px;color:var(--ink-2)}
+.mk-sec{position:relative;padding:56px 48px}
+.mk-alt{background:var(--bg-2)}
+.mk-sec h5{font-size:44px;text-transform:uppercase}
+.mk-lead{color:var(--ink-2);font-size:16px;margin-top:8px;max-width:60ch}
+.mk-progs{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+.mk-prog{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left;border:0;padding:0;background:transparent;color:inherit}
+.mk-prog img,.mk-prog .mk-tile,.mk-prog > b,.mk-prog > small{align-self:stretch}
+.mk-prog img,.mk-tile{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:12px;transition:transform .35s}
+.mk-prog:hover img,.mk-prog:hover .mk-tile{transform:translateY(-4px)}
+.mk-tile{display:grid;place-items:center;align-content:center;background:linear-gradient(150deg,var(--deep),var(--deep-2) 60%,var(--deep));color:var(--on-deep);box-shadow:inset 0 -8px 0 var(--gold)}
+.mk-tile b{font-family:var(--disp);font-weight:800;font-size:56px;line-height:1;letter-spacing:.04em;margin:0}
+.mk-tile small{color:var(--gold);font-family:var(--disp);font-weight:700;letter-spacing:.16em;font-size:14px;margin:6px 0 0}
+.mk-prog > b{display:block;font-family:var(--disp);font-weight:700;font-size:24px;line-height:1.05;margin-top:14px}
+.mk-prog > small{display:block;color:var(--ink-2);font-size:14px;line-height:1.5;margin-top:6px}
+.mk-more{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:700;color:var(--gold-text);border-bottom:1.5px solid currentColor}
+.mk-pass{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.1fr);gap:18px;margin-top:28px;align-items:center}
+.mk-pass img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;box-shadow:0 18px 30px -18px rgba(0,0,0,.45)}
+.mk-pass .txt b{display:block;font-family:var(--disp);font-weight:800;font-size:50px;line-height:1;color:var(--gold-text)}
+.mk-pass .txt span{display:block;color:var(--ink-2);font-size:14.5px;margin-bottom:14px}
+.mk-dir{position:relative;display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center;background:var(--deep);color:var(--on-deep);padding:48px;transition:background .35s}
+.mk-dir img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;box-shadow:0 0 0 6px var(--gold)}
+.mk-dir small{font-family:var(--disp);font-weight:700;letter-spacing:.14em;color:var(--gold);font-size:14px;text-transform:uppercase}
+.mk-dir h5{font-size:40px;margin-top:8px}
+.mk-dir .role{color:var(--on-deep-2);font-size:15px;margin-top:4px}
+.mk-dir blockquote{margin:18px 0 0;color:var(--on-deep-2);font-style:italic;font-size:16.5px;max-width:52ch}
+.mk-dir blockquote::before{content:"\201C";display:block;font-family:var(--disp);font-style:normal;font-weight:800;font-size:64px;line-height:.6;color:var(--gold);margin-bottom:6px}
+.mk-band{display:grid;grid-template-columns:1fr 1fr;background:var(--bg-2);transition:background .35s}
+.mk-band img{width:100%;height:100%;min-height:320px;object-fit:cover}
+.mk-band-copy{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.mk-band-copy h5{font-size:40px;text-transform:uppercase}
+.mk-band-copy p{color:var(--ink-2);font-size:16px;margin-top:12px}
+.mk-band-copy ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.mk-band-copy li{background:var(--surface);border-radius:999px;padding:5px 12px;font-size:13.5px;font-weight:600;box-shadow:0 0 0 1px var(--mline)}
+.mk-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.mk-step{background:var(--bg-2);border-radius:12px;padding:20px}
+.mk-step i{font-style:normal;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--on-gold);font-family:var(--disp);font-weight:800;font-size:20px}
+.mk-step b{display:block;margin-top:12px;font-family:var(--disp);font-weight:700;font-size:22px;line-height:1.05}
+.mk-step small{display:block;color:var(--ink-2);font-size:14px;margin-top:6px;line-height:1.5}
+.mk-btn{display:inline-block;margin-top:24px;border:0;background:var(--deep);color:var(--on-deep);border-radius:999px;padding:11px 20px;font-size:14.5px;font-weight:700}
+.mk-gal{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;margin-top:22px}
+.mk-gal img{width:100%;height:260px;object-fit:cover;border-radius:12px}
+.mk-contact{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.mk-info{list-style:none;margin:18px 0 0;padding:0;font-size:15px}
+.mk-info li{padding:10px 0;border-top:1px solid var(--mline)}
+.mk-info b{display:block;font-size:13px;color:var(--ink-2);font-weight:600}
+.mk-map{height:250px;border-radius:12px;display:grid;place-items:center;align-content:center;gap:8px;color:var(--ink-2);font-size:14px;background:var(--bg-2);background-image:linear-gradient(var(--mline) 1px,transparent 1px),linear-gradient(90deg,var(--mline) 1px,transparent 1px);background-size:32px 32px}
+.mk-map svg{width:40px;height:40px;fill:var(--gold);stroke:var(--deep);stroke-width:1.2}
+.mk-title{background:var(--deep);color:var(--on-deep);padding:40px 48px;transition:background .35s}
+.mk-title small{font-size:13.5px;color:var(--on-deep-2)}
+.mk-title small button{border:0;background:none;padding:0;color:var(--on-deep-2);text-decoration:underline;text-underline-offset:3px}
+.mk-title h5{font-size:48px;margin:8px 0 0;text-transform:uppercase}
+.mk-title p{color:var(--on-deep-2);margin-top:6px}
+.mk-prow{display:grid;grid-template-columns:200px 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--mline)}
+.mk-prow:first-child{border-top:0;padding-top:0}
+.mk-prow > img,.mk-prow > .mk-tile{width:100%;aspect-ratio:1/1;height:auto;object-fit:cover;object-position:top;border-radius:10px}
+.mk-prow .mk-tile b{font-size:44px}
+.mk-prow h6{display:inline;font-size:28px;margin-right:8px}
+.mk-prow em,.mk-prog em{font-style:normal;display:inline-block;margin:6px 6px 0 0;font-size:12.5px;font-weight:700;color:var(--on-gold);background:var(--gold);padding:1px 8px;border-radius:4px;vertical-align:4px}
+.mk-prow p{color:var(--ink-2);margin-top:8px;max-width:62ch}
+.mk-prow ul{margin:10px 0 0;padding-left:18px;font-size:15px;columns:2;column-gap:28px}
+.mk-prow li{break-inside:avoid;margin-bottom:3px}
+.mk-prow .grp-l{display:block;font-weight:700;font-size:13.5px;color:var(--gold-text);margin-top:12px}
+.mk-prow .mk-btn{margin-top:14px}
+.mk-branches{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+.mk-br{background:var(--bg-2);border-radius:12px;padding:20px;border-top:4px solid var(--mline)}
+.mk-br.main{background:var(--deep);color:var(--on-deep);border-top-color:var(--gold);grid-row:span 2}
+.mk-br h6{font-size:28px}
+.mk-br .tag{display:inline-block;font-size:12.5px;font-weight:700;background:var(--gold);color:var(--on-gold);padding:1px 8px;border-radius:4px;margin-bottom:8px}
+.mk-br p{font-size:14.5px;color:var(--ink-2);margin-top:8px;line-height:1.5}
+.mk-br.main p{color:var(--on-deep-2)}
+.mk-br.main dl{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:14.5px}
+.mk-br.main dt{color:var(--on-deep-2)}.mk-br.main dd{margin:0;font-weight:600}
+.mk-adm{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mk-req{border:1.5px dashed var(--mline);border-radius:12px;padding:22px}
+.mk-req h6,.mk-form h6{font-size:26px;margin-bottom:8px}
+.mk-req p{color:var(--ink-2);font-size:14.5px}
+.mk-req ul{margin:12px 0 0;padding-left:18px;font-size:15px}
+.mk-form{background:var(--bg-2);border-radius:12px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.mk-form .f{display:block;background:var(--surface);border:1px solid var(--mline);border-radius:8px;padding:10px 12px;font-size:14px;color:var(--ink-2)}
+.mk-form .sel::after{content:"";float:right;margin-top:6px;border:5px solid transparent;border-top-color:var(--ink-2)}
+.mk-form .as{text-align:center;margin-top:4px}
+.mk-extra{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.mk-extra span{background:var(--bg-2);border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:600}
+.mk-foot{background:var(--foot);color:var(--on-deep-2);padding:38px 48px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px;font-size:14px;line-height:1.7}
+.mk-foot h6{color:var(--on-deep);font-size:20px;margin-bottom:6px}
+.mk-foot p{margin-top:6px}
+.mk-foot .fb{color:var(--on-deep);font-family:var(--disp);font-weight:800;letter-spacing:.05em;font-size:22px}
+.mk-chat{position:sticky;bottom:16px;margin:-64px 18px 0 auto;width:max-content;max-width:calc(100% - 36px);display:flex;align-items:center;gap:8px;border:0;background:var(--gold);color:var(--on-gold);font-size:14px;font-weight:700;padding:11px 16px;border-radius:24px;box-shadow:0 8px 20px rgba(0,0,0,.28);z-index:3}
+.mk-chat svg{width:18px;height:18px;flex:none}
+.mk-chat small{font-weight:600;opacity:.85}
+.mk .mk-foot{padding-bottom:88px}
+.pin{position:absolute;top:14px;right:14px;z-index:6;width:28px;height:28px;border-radius:50%;border:0;padding:0;background:var(--gold);color:var(--on-gold);font-weight:800;font-size:13px;line-height:28px;box-shadow:0 0 0 0 rgba(245,177,12,.55);animation:ping 2.4s ease-out infinite}
+.pin .tip{position:absolute;right:0;top:36px;width:260px;background:#0E1630;color:#fff;font-size:13.5px;line-height:1.45;font-weight:500;padding:10px 12px;border-radius:8px;text-align:left;box-shadow:0 10px 24px rgba(0,0,0,.3);opacity:0;visibility:hidden;transform:translateY(-4px);transition:.2s}
+.pin:hover .tip,.pin:focus-visible .tip,.pin.open .tip{opacity:1;visibility:visible;transform:none}
+.mk-nav .pin{position:relative;top:auto;right:auto;flex:none;order:9}
+.mk-nav .pin .tip{right:-6px}
+.mk.no-notes .pin{display:none}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(245,177,12,.55)}70%,100%{box-shadow:0 0 0 12px rgba(245,177,12,0)}}
+@container (max-width:1000px){
+  .mk-links,.mk-cta{display:none}
+  .mk-burger{display:block}
+  .mk-hero-copy{padding:40px 32px}
+  .mk-hero-copy h4{font-size:46px}
+  .mk-sec{padding:44px 32px}
+  .mk-steps{grid-template-columns:1fr 1fr}
+  .mk-foot{grid-template-columns:1fr 1fr;padding:32px 32px 88px}
+  .mk-facts div{padding:20px}
+  .mk-facts b{font-size:34px}
+  .mk-dir{grid-template-columns:200px 1fr;padding:40px 32px;gap:28px}
+  .mk-branches{grid-template-columns:1fr 1fr}
+  .mk-pass{grid-template-columns:1fr 1fr}
+  .mk-pass .txt{grid-column:1/-1;order:-1}
+}
+@container (max-width:700px){
+  .mk-nav{padding:10px 16px}
+  .mk-brand b{font-size:19px}.mk-brand small{font-size:11px}
+  .mk-badge{width:36px;height:36px;border-radius:10px}.mk-badge img{width:24px;height:29px}
+  .mk-hero{grid-template-columns:1fr}
+  .mk-hero-img{min-height:230px;height:230px;order:-1}
+  .mk-hero-copy{padding:26px 20px 30px}
+  .mk-hero-copy h4{font-size:40px}
+  .mk-sec{padding:36px 20px}
+  .mk-sec h5{font-size:34px}
+  .mk-progs{grid-template-columns:1fr 1fr;gap:12px}
+  .mk-prog > b{font-size:20px}
+  .mk-tile b{font-size:42px}
+  .mk-facts{grid-template-columns:1fr 1fr}
+  .mk-facts div{padding:16px 18px;border-left:0;border-top:1px solid var(--mline)}
+  .mk-facts div:nth-child(even){border-left:1px solid var(--mline)}
+  .mk-facts div:nth-child(-n+2){border-top:0}
+  .mk-facts b{font-size:30px}
+  .mk-steps{grid-template-columns:1fr 1fr;gap:10px}
+  .mk-step{padding:14px}
+  .mk-step b{font-size:19px}
+  .mk-gal{grid-template-columns:1fr 1fr}
+  .mk-gal img{height:150px}
+  .mk-gal img:first-child{grid-column:1/-1;height:190px}
+  .mk-contact,.mk-adm{grid-template-columns:1fr;gap:20px}
+  .mk-map{height:180px}
+  .mk-title{padding:28px 20px}
+  .mk-title h5{font-size:36px}
+  .mk-prow{grid-template-columns:96px 1fr;gap:16px}
+  .mk-prow .mk-tile b{font-size:26px}.mk-prow .mk-tile small{font-size:12px;letter-spacing:.08em}
+  .mk-prow h6{font-size:23px}
+  .mk-prow ul{columns:1}
+  .mk-prow p{font-size:14.5px}
+  .mk-prow .mk-btn{padding:9px 14px;font-size:13.5px}
+  .mk-band{grid-template-columns:1fr}
+  .mk-band img{min-height:200px;height:200px}
+  .mk-band-copy{padding:30px 20px}
+  .mk-band-copy h5{font-size:30px}
+  .mk-dir{grid-template-columns:1fr;padding:32px 20px;gap:20px;text-align:left}
+  .mk-dir img{width:140px}
+  .mk-dir h5{font-size:32px}
+  .mk-branches{grid-template-columns:1fr}
+  .mk-br.main{grid-row:auto}
+  .mk-pass .txt b{font-size:40px}
+  .mk-foot{grid-template-columns:1fr;gap:16px;padding:26px 20px 88px}
+  .pin .tip{width:210px}
+}
+
+/* ============ PORTAL ============ */
+.portal{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.vseg{display:inline-flex;flex-wrap:wrap;background:rgba(255,255,255,.08);border-radius:999px;padding:5px;margin-top:32px}
+.vseg button{border:0;background:transparent;color:var(--on-deep-2);padding:9px 16px;border-radius:999px;font-weight:650;font-size:15px}
+.vseg button[aria-selected=true]{background:var(--gold);color:var(--on-gold)}
+@media (max-width:480px){.vseg{flex-wrap:nowrap;max-width:100%}.vseg button{padding:8px 11px;font-size:14px;white-space:nowrap}}
+@media (max-width:350px){.vseg button{padding:7px 8px;font-size:13px}}
+.vdesc{color:var(--on-deep);font-size:16.5px;line-height:1.55;margin-top:20px;max-width:44ch;min-height:5.2em}
+.p-note{color:var(--on-deep-2);font-size:14.5px;margin-top:18px;max-width:46ch;line-height:1.55}
+.lap{background:var(--surface);color:var(--ink);border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -40px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.08)}
+.app{container-type:inline-size}
+.app-head{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--surface)}
+.app-head .mk-badge{width:38px;height:38px;background:var(--bg-2)}
+.app-head .mk-badge img{width:24px;height:30px}
+.app-head b{display:block;font-family:var(--disp);font-weight:800;font-size:21px;letter-spacing:.03em;line-height:1}
+.app-head small{display:block;color:var(--ink-2);font-size:13.5px}
+.app-head .sd{margin-left:auto;font-size:12.5px;font-weight:700;background:var(--gold-wash);color:var(--gold-text);padding:3px 10px;border-radius:999px;white-space:nowrap}
+.ppane{padding:22px;min-height:540px;background:var(--bg)}
+.ppane[hidden]{display:none}
+.signin{max-width:360px;margin:44px auto 0;text-align:center;background:var(--surface);border-radius:16px;padding:32px 26px;box-shadow:0 0 0 1px var(--line)}
+.signin .mk-badge{margin:0 auto;width:64px;height:64px;border-radius:18px;background:var(--bg-2)}
+.signin .mk-badge img{width:40px;height:48px}
+.signin h4{font-family:var(--disp);font-weight:700;font-size:28px;margin:16px 0 6px;line-height:1.05}
+.signin p{color:var(--ink-2);font-size:14.5px}
+.gbtn{margin-top:20px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:10px;padding:12px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--line);font-weight:650;font-size:15px}
+.gbtn:hover{box-shadow:inset 0 0 0 1.5px var(--ink-2)}
+.gbtn svg{width:20px;height:20px}
+.signin small{display:block;margin-top:14px;color:var(--ink-2);font-size:13px}
+.rv-top{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.rv-top h4{font-family:var(--disp);font-weight:700;font-size:28px;margin:0;line-height:1}
+.rv-top p{color:var(--ink-2);font-size:14px;margin-top:4px}
+.chip{display:inline-block;font-size:13px;font-weight:650;background:var(--surface);box-shadow:0 0 0 1px var(--line);padding:4px 11px;border-radius:999px;color:var(--ink-2)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.filters button{border:0;border-radius:999px;padding:7px 13px;font-size:13.5px;font-weight:650;background:var(--surface);box-shadow:inset 0 0 0 1px var(--line);color:var(--ink-2)}
+.filters button[aria-pressed=true]{background:var(--deep);color:#fff;box-shadow:none}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+.post{position:relative;display:flex;flex-direction:column;text-align:left;border:0;padding:0;background:var(--surface);border-radius:14px;overflow:hidden;box-shadow:0 0 0 1px var(--line);transition:transform .2s,box-shadow .2s;color:var(--ink)}
+.post:hover{transform:translateY(-3px);box-shadow:0 14px 28px -16px rgba(8,14,40,.45),0 0 0 1px var(--line)}
+.thumb{position:relative;aspect-ratio:16/10;display:flex;flex-direction:column;justify-content:flex-end;padding:12px 14px;overflow:hidden}
+.thumb b{font-family:var(--disp);font-weight:800;font-size:25px;line-height:.95;text-transform:uppercase;position:relative}
+.thumb small{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;position:relative;margin-bottom:4px}
+.thumb svg{position:absolute;right:-10px;top:-10px;width:92px;height:92px;opacity:.16}
+.ty-exam .thumb{background:linear-gradient(140deg,#0B1A47,#1D44B8);color:#fff}.ty-exam .thumb small{color:var(--gold)}
+.ty-meet .thumb{background:linear-gradient(140deg,#14296E,#2C5BD6);color:#fff}.ty-meet .thumb small{color:#CFE0FF}
+.ty-f2f .thumb{background:linear-gradient(140deg,#0F5132,#1E7A46);color:#fff}.ty-f2f .thumb small{color:#CFF0DC}
+.ty-rec .thumb{background:linear-gradient(140deg,#121A30,#2B3A66);color:#fff}.ty-rec .thumb small{color:#C7D1EC}
+.ty-feedback .thumb{background:linear-gradient(140deg,#F5B10C,#FFD25A);color:#1A1300}.ty-feedback .thumb small{color:#3D2A00}
+.ty-note .thumb{background:linear-gradient(140deg,#E6EBF5,#F7F9FD);color:var(--ink)}.ty-note .thumb small{color:var(--gold-text)}
+.pbody{padding:12px 14px 14px;display:flex;flex-direction:column;gap:2px;flex:1}
+.pbody b{font-size:14.5px;line-height:1.35}
+.pbody span{font-size:13px;color:var(--ink-2)}
+.pbody em{font-style:normal;margin-top:8px;align-self:flex-start;font-size:13px;font-weight:700;background:var(--gold);color:var(--on-gold);padding:5px 12px;border-radius:999px}
+.post .flag{position:absolute;left:10px;top:10px;z-index:1;font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:2px 8px;border-radius:999px;background:var(--gold);color:var(--on-gold)}
+.post .flag.done{background:#E3F4EA;color:var(--ok)}
+.empty{color:var(--ink-2);font-size:14.5px;padding:24px 0}
+.sgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px}
+.tile{background:var(--surface);border-radius:14px;padding:18px;box-shadow:0 0 0 1px var(--line);min-width:0}
+.tile h5{font-family:var(--disp);font-weight:700;font-size:22px;margin:0 0 12px;line-height:1.05}
+.fld{margin-bottom:12px}
+.fld > label,.fld > span{display:block;font-size:13.5px;font-weight:650;margin-bottom:5px}
+.fld input,.fld select{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);font-size:15px}
+.fld input:focus,.fld select:focus{outline:2px solid var(--gold);outline-offset:0;border-color:transparent}
+.fld.bad input{border-color:var(--bad)}
+.fld .err{display:none;color:var(--bad);font-size:13px;margin-top:4px}
+.fld.bad .err{display:block}
+.types{display:flex;flex-wrap:wrap;gap:6px}
+.types label{cursor:pointer;position:relative}
+.types input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
+.types span{display:block;padding:6px 12px;border-radius:999px;font-size:13.5px;font-weight:650;background:var(--bg);box-shadow:inset 0 0 0 1px var(--line)}
+.types input:checked + span{background:var(--deep);color:#fff;box-shadow:none}
+.types input:focus-visible + span{outline:3px solid var(--gold);outline-offset:2px}
+.hint{font-size:13px;color:var(--ink-2);margin-top:10px}
+.plist{list-style:none;margin:0;padding:0}
+.plist li{display:flex;align-items:center;gap:10px;padding:9px 0;font-size:14px}
+.plist li + li{border-top:1px solid var(--line)}
+.plist .dot{width:10px;height:10px;border-radius:50%;flex:none}
+.plist li > span{flex:1;min-width:0}
+.plist li .mini{padding:6px 10px}
+.plist small{display:block;color:var(--ink-2);font-size:12.5px}
+.mini{border:0;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700;background:var(--bg-2);color:var(--ink);white-space:nowrap}
+.mini.gold{background:var(--gold);color:var(--on-gold)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border-radius:12px;padding:14px 16px;box-shadow:0 0 0 1px var(--line)}
+.kpi b{display:block;font-family:var(--disp);font-weight:800;font-size:32px;line-height:1}
+.kpi span{font-size:13px;color:var(--ink-2);font-weight:600}
+.agrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;margin-top:14px}
+table.mini-t{width:100%;border-collapse:collapse;font-size:14px}
+table.mini-t th{text-align:left;color:var(--ink-2);font-weight:600;font-size:12.5px;padding:0 6px 6px 0}
+table.mini-t td{padding:8px 6px 8px 0;border-top:1px solid var(--line)}
+table.mini-t td.n,table.mini-t th.n{text-align:right;padding-right:0}
+.tg{border:0;background:transparent;padding:0;display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:650;color:var(--ink-2)}
+.tg i{width:32px;height:18px;border-radius:999px;background:#A9B2C8;position:relative;transition:background .2s}
+.tg i::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:transform .2s}
+.tg[aria-pressed=true]{color:var(--ok)}
+.tg[aria-pressed=true] i{background:var(--ok)}
+.tg[aria-pressed=true] i::after{transform:translateX(14px)}
+.emails{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.emails span{display:inline-flex;align-items:center;gap:6px;background:var(--bg);box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;padding:4px 6px 4px 11px;font-size:13px;max-width:100%}
+.emails span em{font-style:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.emails button{border:0;background:var(--bg-2);border-radius:50%;width:20px;height:20px;font-size:12px;line-height:20px;padding:0;flex:none}
+.addrow{display:flex;gap:8px;margin-top:10px}
+.addrow input{flex:1;min-width:0;padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:var(--bg);font-size:14px}
+.roles{margin-top:14px}
+@container (max-width:620px){
+  .ppane{padding:16px;min-height:0}
+  .posts{grid-template-columns:1fr 1fr;gap:10px}
+  .thumb b{font-size:20px}
+  .sgrid,.agrid{grid-template-columns:1fr}
+  .kpis{grid-template-columns:1fr 1fr}
+  .app-head{padding:12px 14px}
+  .app-head .sd{display:none}
+}
+@media (max-width:980px){.portal{grid-template-columns:minmax(0,1fr);gap:32px}.vdesc{min-height:0}}
+
+/* Google Form pop-up */
+.fmodal{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:20px;visibility:hidden}
+.fmodal.open{visibility:visible}
+.fmodal .scrim{position:absolute;inset:0;background:rgba(6,10,26,.6);opacity:0;transition:opacity .25s}
+.fmodal.open .scrim{opacity:1}
+.fm-sheet{position:relative;width:min(680px,100%);max-height:calc(100svh - 40px);display:flex;flex-direction:column;background:#F1F3F8;border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);transform:translateY(16px) scale(.98);opacity:0;transition:transform .3s,opacity .3s}
+.fmodal.open .fm-sheet{transform:none;opacity:1}
+.fm-bar{display:flex;align-items:center;gap:12px;padding:12px 14px 12px 18px;background:var(--deep);color:#fff}
+.fm-bar b{font-family:var(--disp);font-weight:700;font-size:20px;line-height:1.1;flex:1;min-width:0}
+.fm-bar small{display:block;font-family:var(--sans);font-weight:500;font-size:12.5px;color:var(--on-deep-2)}
+.fm-bar .x{background:rgba(255,255,255,.12);color:#fff;width:38px;height:38px}
+.fm-body{overflow-y:auto;padding:18px;overscroll-behavior:contain}
+.fm-body iframe{width:100%;height:70vh;border:0;border-radius:10px;background:#fff}
+.gf{display:flex;flex-direction:column;gap:12px}
+.gf-card{background:#fff;border-radius:10px;padding:20px 22px;box-shadow:0 0 0 1px #DCE1EC}
+.gf-head{border-top:10px solid var(--royal)}
+.gf-head h4{font-size:26px;font-weight:500;margin:0;line-height:1.2;font-family:var(--sans)}
+.gf-head p{font-size:14px;color:#4E5A78;margin-top:8px}
+.gf-head .acct{font-size:13.5px;color:#4E5A78;border-top:1px solid #E3E7F0;margin-top:14px;padding-top:12px}
+.gf-q p{font-size:16px;margin-bottom:12px}
+.gf-q label{display:flex;align-items:center;gap:12px;padding:7px 0;font-size:15px;cursor:pointer}
+.gf-q input{width:18px;height:18px;accent-color:var(--royal);flex:none}
+.gf-q .req{color:var(--bad)}
+.gf-acts{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.gf-acts .btn{border-radius:8px;background:var(--royal);color:#fff;padding:10px 24px}
+.gf-acts small{font-size:13px;color:#4E5A78}
+.gf-done h4{font-size:24px;font-weight:500;margin:0;font-family:var(--sans)}
+.gf-done p{font-size:15px;color:#4E5A78;margin-top:10px}
+.gf-note{font-size:13px;color:#4E5A78;text-align:center;padding:4px 10px}
+
+/* ============ WORK CAROUSEL ============ */
+.work-sec{background:var(--surface)}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:36px}
+.tabs button{border:0;background:transparent;font-family:var(--disp);font-weight:600;font-size:clamp(19px,1.6vw,23px);color:var(--ink-2);padding:6px 2px;margin-right:18px;border-bottom:3px solid transparent;transition:color .2s,border-color .2s}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--gold)}
+.car{position:relative;margin-top:30px}
+.car-frame{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 40px 90px -40px rgba(8,14,40,.6),0 0 0 1px var(--line)}
+.view{position:relative;height:min(68vh,640px);overflow:hidden;background:#F2F4F8}
+.view iframe{position:absolute;left:0;top:0;border:0;background:#fff;transform-origin:0 0}
+.view .poster{position:absolute;inset:0;overflow:hidden;background:#fff}
+.view .poster img{width:100%;height:auto}
+.view.poster-mode{height:auto}
+.view.poster-mode .poster{position:relative;inset:auto}
+.view.poster-mode .poster img{max-height:min(70vh,680px);object-fit:cover;object-position:top}
+.shield{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:26px;background:linear-gradient(0deg,rgba(6,12,32,.55),transparent 40%);border:0;width:100%;cursor:pointer;color:#fff;transition:opacity .25s}
+.shield span{background:rgba(8,14,36,.88);border-radius:999px;padding:10px 18px;font-size:15px;font-weight:650;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.view.live .shield{opacity:0;pointer-events:none}
+.done-explore{position:absolute;top:12px;right:12px;z-index:3;display:none}
+.view.live .done-explore{display:inline-flex}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:#4E5A78;font-size:17px;pointer-events:none}
+.arrow{position:absolute;top:50%;z-index:4;width:48px;height:48px;border-radius:50%;border:0;background:var(--gold);color:var(--on-gold);display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.3);transform:translateY(-50%)}
+.arrow:hover{background:var(--gold-hi)}
+.arrow.prev{left:-24px}.arrow.next{right:-24px}
+.arrow svg{width:22px;height:22px}
+.car-info{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;margin-top:32px;align-items:start}
+.car-info h3{font-size:clamp(30px,2.8vw,40px)}
+.car-info .kind{color:var(--ink-2);font-size:16px;margin-top:8px}
+.car-info .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.add-label{font-size:15px;color:var(--ink-2);margin-bottom:14px}
+.adds{display:flex;flex-wrap:wrap;gap:10px}
+.adds button{border:0;border-radius:999px;padding:9px 15px;font-size:14.5px;font-weight:600;background:var(--bg);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);display:flex;gap:9px;align-items:center}
+.adds button:hover{box-shadow:inset 0 0 0 1.5px var(--gold-text)}
+.adds button[aria-pressed=true]{background:var(--gold);color:var(--on-gold);box-shadow:none}
+.adds button i{font-style:normal;font-weight:800;width:18px;text-align:center}
+.counter{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.1em;color:var(--gold-text);text-transform:uppercase}
+@media (max-width:900px){
+  .arrow{top:auto;bottom:-28px;transform:none}
+  .arrow.prev{left:auto;right:76px}.arrow.next{right:12px}
+  .car-info{grid-template-columns:1fr;gap:30px;margin-top:46px}
+  .view{height:62vh}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-24px;margin-right:-24px;padding:0 24px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs button{white-space:nowrap;flex:none}
+}
+
+/* ============ MENU (PACKAGES) ============ */
+.menu-sec{background:var(--bg-2)}
+.center{text-align:center}
+.center .intro-line{margin-left:auto;margin-right:auto}
+.menu{display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:0;align-items:stretch}
+.course{padding:36px 28px;display:flex;flex-direction:column;text-align:center;border-radius:20px;transition:background .3s}
+.course.best{background:var(--deep);color:var(--on-deep);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.course .chef{font-size:13px;font-weight:700;color:var(--gold-text);min-height:22px;letter-spacing:.08em;text-transform:uppercase}
+.course.best .chef{color:var(--gold)}
+.course h3{font-size:clamp(36px,3.4vw,48px);text-transform:uppercase;margin-top:6px;letter-spacing:.02em}
+.course .for{color:var(--ink-2);font-size:15px;margin:10px auto 0;max-width:28ch;line-height:1.5}
+.course.best .for{color:var(--on-deep-2)}
+.course .price{font-family:var(--disp);font-weight:800;font-size:clamp(46px,4.2vw,58px);margin-top:18px;line-height:1;font-variant-numeric:lining-nums}
+.course .reg{font-size:14px;color:var(--ink-2);margin-top:10px}
+.course.best .reg{color:var(--on-deep-2)}
+.course .reg s{margin-right:8px}
+.course .reg b{color:var(--gold-text)}
+.course .upnote{font-size:14px;font-weight:700;margin-top:6px}
+.course.best .reg b{color:var(--gold)}
+.course .orn{width:46px;height:3px;background:var(--gold);margin:22px auto 18px}
+.course ul{list-style:none;margin:0;padding:0;font-size:15px;line-height:1.5;flex:1}
+.course li{padding:3px 0}
+.course li.more{font-weight:600;color:var(--ink-2)}
+.course.best li.more{color:var(--on-deep-2)}
+.course li.hl{font-weight:700}
+.course .btn{margin-top:24px;align-self:center;min-width:190px}
+.course.chosen:not(.best){background:var(--surface);box-shadow:0 0 0 2px var(--gold)}
+.course.best.chosen{box-shadow:0 0 0 3px var(--gold),0 40px 80px -40px rgba(0,0,0,.6)}
+.menu-card{position:relative;margin-top:56px;padding:34px 22px 22px;border:1px solid var(--line);border-radius:22px;box-shadow:inset 0 0 0 6px var(--bg-2),inset 0 0 0 7px var(--line)}
+.menu-crest{position:absolute;top:-30px;left:50%;width:60px;height:60px;margin-left:-30px;border-radius:16px;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 8px var(--bg-2)}
+.menu-crest img{width:36px;height:44px;object-fit:contain}
+.domain{margin-top:56px;text-align:center}
+.domain .lab{font-size:15px;color:var(--ink-2);font-weight:600}
+.domain .host{display:inline-flex;align-items:center;gap:12px;font-family:var(--disp);font-weight:800;font-size:clamp(36px,5vw,60px);line-height:1;margin-top:8px;word-break:break-all;color:var(--ink)}
+.domain .host svg{flex:none;width:34px;height:34px;color:var(--gold-text)}
+.domain p:last-child{color:var(--ink-2);font-size:15.5px;margin:12px auto 0;max-width:54ch}
+@media (max-width:980px){.menu-card{padding:30px 10px 12px;box-shadow:none}}
+.alacarte{margin-top:44px;text-align:center}
+.alacarte p{font-family:var(--disp);font-weight:700;font-size:clamp(24px,2.2vw,30px)}
+.alacarte .btn{margin-top:14px}
+@media (max-width:980px){.menu{grid-template-columns:1fr;gap:18px}.course{padding:36px 22px}.course.best{order:-1}}
+
+/* ============ DRAWER ============ */
+.drawer{position:fixed;inset:0;z-index:70;visibility:hidden}
+.drawer.open{visibility:visible}
+.drawer .scrim{position:absolute;inset:0;background:rgba(6,10,26,.55);opacity:0;transition:opacity .3s}
+.drawer.open .scrim{opacity:1}
+.sheet{position:absolute;top:0;right:0;bottom:0;width:min(580px,100%);background:var(--surface);color:var(--ink);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:-20px 0 60px rgba(0,0,0,.3)}
+.drawer.open .sheet{transform:none}
+.sheet-head{padding:26px 28px 16px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.sheet-head h3{font-size:38px;text-transform:uppercase}
+.sheet-head p{color:var(--ink-2);font-size:14.5px;margin-top:6px}
+.sheet-body{flex:1;overflow-y:auto;padding:0 28px 20px;overscroll-behavior:contain}
+.grp{font-family:var(--disp);font-weight:700;font-size:23px;margin:24px 0 4px;text-transform:uppercase;letter-spacing:.02em}
+.grp small{display:block;font-family:var(--sans);font-weight:500;text-transform:none;letter-spacing:0;font-size:13.5px;color:var(--ink-2)}
+.opt{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:start}
+.opt input{appearance:none;-webkit-appearance:none;width:24px;height:24px;margin:2px 0 0;border-radius:7px;box-shadow:inset 0 0 0 2px var(--ink-2);background:var(--surface);cursor:pointer;display:grid;place-content:center}
+.opt input:checked,.opt input:disabled{background:var(--gold);box-shadow:none}
+.opt input:checked::after{content:"";width:7px;height:12px;border:solid var(--on-gold);border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.opt label{cursor:pointer}
+.opt .name{display:block;font-weight:650;font-size:15.5px}
+.opt .desc{display:block;color:var(--ink-2);font-size:14px;margin-top:2px;line-height:1.5}
+.opt .pp{font-weight:700;font-size:15px;white-space:nowrap;text-align:right}
+.opt .pp small{display:block;font-weight:500;color:var(--ink-2);font-size:13px}
+.opt .inpkg{display:block;font-size:13px;font-weight:700;color:var(--gold-text);margin-top:3px}
+.sheet-foot{padding:18px 28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px}
+.sheet-foot small{display:block;color:var(--ink-2);font-size:13.5px}
+.sheet-foot strong{font-family:var(--disp);font-weight:800;font-size:34px;line-height:1}
+.x{width:46px;height:46px;border-radius:50%;border:0;background:var(--bg-2);display:grid;place-items:center;flex:none;color:var(--ink)}
+.x svg{width:20px;height:20px}
+
+/* ============ QUOTATION ============ */
+.quote-sec{background:var(--bg)}
+.quote{display:grid;grid-template-columns:390px minmax(0,1fr);gap:64px;align-items:start;margin-top:44px}
+.rail-bar{height:24px;background:linear-gradient(180deg,#22357A,#0B1A47);border-radius:5px;position:relative;box-shadow:0 4px 8px rgba(0,0,0,.25);z-index:2}
+.rail-bar::after{content:"";position:absolute;left:50%;top:16px;width:50px;height:16px;margin-left:-25px;background:var(--gold);border-radius:0 0 7px 7px}
+.ticket{background:#FFFEFB;color:#0E1630;margin:-4px 16px 0;padding:30px 22px 38px;box-shadow:0 22px 40px -18px rgba(0,0,0,.45);
+  -webkit-mask:radial-gradient(circle 8px at 50% 100%,#0000 98%,#000) 50% 100%/18px 100% repeat-x;mask:radial-gradient(circle 8px at 50% 100%,#0000 98%,#000) 50% 100%/18px 100% repeat-x}
+.t-head{text-align:center;padding-bottom:16px;border-bottom:1.5px dashed #B9C2D8}
+.t-head b{font-family:var(--disp);font-weight:800;letter-spacing:.08em;font-size:24px;display:block;line-height:1.1}
+.t-head span{font-size:14px;color:#4E5A78}
+.t-lines{list-style:none;margin:16px 0 0;padding:0}
+.t-lines li{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;padding:4px 0}
+.t-lines li span:last-child{white-space:nowrap;font-weight:650}
+.t-lines li.pkg{font-family:var(--disp);font-weight:700;font-size:23px;padding-bottom:8px;text-transform:uppercase;letter-spacing:.02em}
+.t-lines li.sub{padding:1px 0 1px 14px;font-size:13.5px;color:#4E5A78}
+.t-lines li.new{animation:print .5s ease-out}
+@keyframes print{from{opacity:0;transform:translateY(-6px);background:#FCEFC4}to{opacity:1;transform:none;background:transparent}}
+.t-sum{border-top:1.5px dashed #B9C2D8;margin-top:14px;padding-top:14px}
+.t-row{display:flex;justify-content:space-between;gap:10px;font-size:14px;color:#4E5A78;padding:2px 0}
+.t-row.save span:last-child{color:var(--ok);font-weight:700}
+.t-total{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;padding-top:12px;border-top:2px solid #0E1630}
+.t-total span{font-weight:700;font-size:15px}
+.t-total strong{font-family:var(--disp);font-weight:800;font-size:36px;line-height:1}
+.q-side .big{font-family:var(--disp);font-weight:800;font-size:clamp(52px,6.4vw,88px);line-height:.95}
+.q-side .big-sub{font-size:16.5px;color:var(--ink-2);margin-top:14px}
+.q-side .big-sub b{color:var(--ink)}
+.warranty{margin-top:30px;display:flex;gap:18px;align-items:flex-start}
+.warranty svg{flex:none;width:32px;height:32px;color:var(--gold-text)}
+.warranty b{display:block;font-family:var(--disp);font-weight:700;font-size:25px;line-height:1.05}
+.warranty span{display:block;color:var(--ink-2);font-size:15px;margin-top:6px;max-width:48ch}
+.q-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.upsell{margin-top:32px}
+.upsell b{display:block;font-family:var(--disp);font-weight:700;font-size:25px;line-height:1.1}
+.upsell p{color:var(--ink-2);font-size:15px;margin-top:6px;max-width:52ch}
+.upsell .btn{margin-top:14px}
+.reach{margin-top:22px;font-size:15.5px;color:var(--ink-2);max-width:54ch;line-height:1.6}
+.reach b{color:var(--ink)}
+.reach a{color:var(--gold-text);font-weight:650;text-underline-offset:3px;overflow-wrap:anywhere}
+.steps{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:s}
+.steps li{counter-increment:s}
+.steps li::before{content:"0" counter(s);display:block;font-family:var(--disp);font-weight:800;font-size:36px;line-height:1;color:var(--gold-text);margin-bottom:8px}
+.steps b{display:block;font-size:15.5px}
+.steps span{display:block;color:var(--ink-2);font-size:14px;margin-top:4px;line-height:1.5}
+.terms-link{margin-top:28px;font-size:14.5px;color:var(--ink-2)}
+.terms-link button{background:none;border:0;padding:0;color:var(--ink);font-weight:650;text-decoration:underline;text-underline-offset:3px}
+.terms{display:none;margin-top:14px;font-size:14.5px;color:var(--ink-2);max-width:66ch}
+.terms.open{display:block}
+.terms ul{margin:8px 0 0;padding-left:20px}
+.terms li{margin:4px 0}
+@media (max-width:1020px){.quote{grid-template-columns:minmax(0,1fr);gap:56px}.ticket-col{max-width:440px;width:100%;margin:0 auto}.steps{grid-template-columns:1fr 1fr}}
+
+/* sign-off */
+.signoff{padding:80px 0 88px;text-align:center}
+.signoff .crest-sm{width:76px;height:76px;padding:12px;border-radius:20px;background:#fff;object-fit:contain;margin:0 auto}
+.signoff h2{margin-top:24px}
+.signoff .names{display:flex;justify-content:center;gap:64px;flex-wrap:wrap;margin-top:36px}
+.signoff .names p{color:var(--on-deep-2);font-size:14.5px}
+.signoff .names strong{display:block;font-family:var(--disp);font-size:28px;font-weight:700;color:var(--on-deep);margin:6px 0 2px;line-height:1.1}
+.signoff .again{margin-top:36px;background:none;border:0;color:var(--on-deep-2);font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+.signoff .fine{margin:22px auto 0;color:var(--on-deep-2);font-size:13.5px;max-width:60ch}
+
+/* order pill */
+.pill{position:fixed;right:22px;bottom:22px;z-index:45;display:flex;align-items:center;gap:16px;background:var(--deep);color:var(--on-deep);border-radius:999px;padding:9px 9px 9px 24px;box-shadow:0 16px 40px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.08);transform:translateY(160%);visibility:hidden;transition:transform .35s ease,visibility .35s}
+.pill.show{transform:none;visibility:visible}
+.pill small{display:block;color:var(--on-deep-2);font-size:13px;white-space:nowrap}
+.pill strong{font-family:var(--disp);font-weight:800;font-size:26px;line-height:1}
+.pill .btn{padding:10px 18px;font-size:14.5px}
+@media (max-width:640px){.pill{left:12px;right:12px;bottom:12px;justify-content:space-between}}
+.toast{position:fixed;left:50%;top:calc(var(--top) + 16px);transform:translate(-50%,-10px);background:var(--deep);color:var(--on-deep);padding:10px 20px;border-radius:999px;font-size:15px;opacity:0;pointer-events:none;transition:.25s;z-index:90;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:calc(100vw - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* sample website chat */
+.cpanel{position:fixed;right:22px;bottom:22px;z-index:60;width:370px;max-width:calc(100vw - 24px);height:min(560px,calc(100svh - var(--top) - 40px));background:var(--surface);border-radius:20px;box-shadow:0 30px 70px -20px rgba(0,0,0,.5),0 0 0 1px var(--line);display:flex;flex-direction:column;overflow:hidden;transform:translateY(20px);opacity:0;visibility:hidden;transition:transform .3s,opacity .3s,visibility .3s}
+.cpanel.open{transform:none;opacity:1;visibility:visible}
+.cp-head{background:var(--deep);color:var(--on-deep);padding:14px 14px 14px 18px;display:flex;align-items:center;gap:12px}
+.cp-head .mk-badge{width:38px;height:38px}
+.cp-head .mk-badge img{width:24px;height:30px}
+.cp-head b{display:block;font-family:var(--disp);font-weight:700;font-size:21px;line-height:1}
+.cp-head small{display:block;color:var(--on-deep-2);font-size:13px}
+.cp-head .x{margin-left:auto;width:38px;height:38px;background:rgba(255,255,255,.12);color:#fff}
+.cp-add{background:var(--gold-wash);padding:9px 16px;font-size:13.5px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cp-add[hidden]{display:none}
+.cp-add button{border:0;background:var(--deep);color:#fff;border-radius:999px;padding:5px 12px;font-weight:700;font-size:13px}
+.msgs{flex:1;overflow-y:auto;padding:18px 16px 10px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.msg{max-width:88%;padding:10px 14px;border-radius:16px;font-size:14.5px;line-height:1.5;animation:pop .25s ease-out}
+.msg.bot{background:var(--surface);box-shadow:0 0 0 1px var(--line);border-bottom-left-radius:6px;align-self:flex-start}
+.msg.me{background:var(--deep);color:var(--on-deep);border-bottom-right-radius:6px;align-self:flex-end}
+.msg.typing{display:flex;gap:5px;padding:14px}
+.msg.typing i{width:8px;height:8px;border-radius:50%;background:var(--ink-2);animation:blink 1s infinite}
+.msg.typing i:nth-child(2){animation-delay:.15s}.msg.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;border-top:1px solid var(--line);scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:none;border:0;border-radius:999px;padding:7px 12px;font-size:13.5px;background:var(--bg-2);font-weight:600}
+.chips button:hover{background:var(--gold-wash)}
+.ask{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+.ask input{flex:1;padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);font-size:16px;min-width:0}
+.ask .btn{padding:10px 16px}
+@media (max-width:520px){.cpanel{right:12px;left:12px;bottom:12px;width:auto;max-width:none}}
+
+/* drawn previews (only used when a site cannot be shown live) */
+.rep{font-family:Arial,Helvetica,sans-serif;color:#222;background:#fff;line-height:1.5;transform-origin:0 0;container-type:inline-size;container-name:rep}
+.rep h1,.rep h2{letter-spacing:0}
+.r-bar{display:flex;align-items:center;gap:14px;padding:16px 40px}
+.r-logo{width:44px;height:44px;border-radius:50%}
+.r-nav{margin-left:auto;display:flex;gap:22px;font-size:14px}
+.r-hero{padding:70px 40px;color:#fff}
+.r-hero h1{font-family:Georgia,serif;font-size:52px;line-height:1.1;margin:0 0 14px;font-weight:700}
+.r-hero p{font-size:17px;max-width:620px;opacity:.9}
+.r-btn{display:inline-block;padding:11px 18px;border-radius:4px;font-weight:700;font-size:14px;margin:18px 10px 0 0}
+.r-sec{padding:46px 40px}
+.r-sec h2{font-family:Georgia,serif;font-size:32px;margin:0 0 18px;font-weight:700}
+.r-grid{display:grid;gap:18px}
+.r-g2{grid-template-columns:1fr 1fr}.r-g3{grid-template-columns:repeat(3,1fr)}.r-g4{grid-template-columns:repeat(4,1fr)}.r-g5{grid-template-columns:repeat(5,1fr)}
+.r-card{border-radius:8px;padding:18px;font-size:14px;line-height:1.5}
+.r-card b{display:block;font-size:16px;margin-bottom:6px}
+.r-img{border-radius:8px;min-height:150px}
+.r-stat b{display:block;font-size:40px;font-family:Georgia,serif}
+.r-foot{padding:34px 40px;font-size:13px;line-height:1.7}
+.r-side{display:grid;grid-template-columns:270px 1fr;min-height:1400px}
+@container rep (max-width:600px){
+  .r-g2,.r-g3,.r-g4,.r-g5{grid-template-columns:1fr}
+  .r-nav{display:none}
+  .r-hero{padding:40px 20px}.r-hero h1{font-size:34px}
+  .r-sec{padding:30px 20px}.r-bar{padding:14px 20px}.r-foot{padding:24px 20px}
+  .r-side{grid-template-columns:1fr}
+  .r-side > aside{display:none}
+}
+.nopreview{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:#4E5A78;font-size:16px;background:#F2F4F8}
+
+/* ============ PRINT ============ */
+#printArea{display:none}
+@media print{
+  @page{size:A4;margin:15mm}
+  html,body{background:#fff !important;color:#000}
+  body > *:not(#printArea){display:none !important}
+  #printArea{display:block;color:#000;font-size:11pt;font-family:Arial,Helvetica,sans-serif}
+  .pq-head{display:flex;justify-content:space-between;align-items:start;border-bottom:2px solid #000;padding-bottom:10px}
+  .pq-head h1{font-family:Arial,Helvetica,sans-serif;font-size:20pt}
+  .pq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;font-size:10.5pt}
+  .pq-grid b{display:block}
+  table.pq{width:100%;border-collapse:collapse;font-size:10.5pt}
+  table.pq th,table.pq td{border-bottom:1px solid #999;padding:6px 4px;text-align:left;vertical-align:top}
+  table.pq td.n{text-align:right;white-space:nowrap}
+  table.pq tr{break-inside:avoid}
+  table.pq tr.sum td{border-bottom:0;padding:4px}
+  table.pq tr.first td{border-top:2px solid #000}
+  .pq-terms{font-size:10pt;margin-top:14px}
+  .pq-terms ul{margin:4px 0;padding-left:16px}
+  .pq-sign{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:44px;font-size:10.5pt}
+  .pq-sign div{border-top:1px solid #000;padding-top:4px}
+  .pq-note{font-size:9pt;color:#444;margin-top:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-delay:0s !important;animation-iteration-count:1 !important;transition:none !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+
+<div id="intro" role="dialog" aria-modal="true" aria-label="Welcome">
+  <button class="skip" type="button" data-begin>Skip</button>
+  <div>
+    <img class="crest" src="media/mark.png" alt="Chain Rinivarts mark">
+    <div class="rule"></div>
+    <div class="word">CHAIN RINIVARTS</div>
+    <div class="sub">EDUCATIONAL TRAINING CENTER</div>
+    <p class="greet"><span data-greeting>Good day</span>, <b>Mr. De Los Reyes</b>.<br>Your website and portal proposal is ready.</p>
+    <p class="inote">This is a sample site made only for this proposal. It is temporary, and nothing you enter here is sent or collected.</p>
+    <div class="acts"><button class="btn btn-gold" type="button" data-begin>Begin</button></div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="strip"><span class="long">Sample site for proposal purposes only. Temporary page; nothing you enter is sent or collected.</span><span class="short">Sample proposal site. Nothing is collected.</span></div>
+  <div class="bar">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Back to the top"><i><img src="media/mark.png" alt=""></i><b>CHAIN RINIVARTS</b></a>
+      <nav aria-label="Proposal">
+        <a href="#design">The website</a>
+        <a href="#portal">The portal</a>
+        <a href="#work">Our work</a>
+        <a href="#menu">Packages</a>
+        <a href="#quote">Quotation</a>
+      </nav>
+    </div>
+    <div class="progress" id="progress"></div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="for">Prepared for <b>Mr. Arvin Christian De Los Reyes</b><br>Managing Director, Chain Rinivarts Educational Training Center</p>
+      <h1>Quality is your priority. <em>Let your website show it.</em></h1>
+      <p class="hero-sub">A sample website and reviewee portal for CRETC, built around the Google tools you already use: Meet, Forms and Drive. Explore it, try the portal, then build your own quotation.</p>
+      <div class="hero-foot">
+        <a class="btn btn-gold" href="#design">See your website</a>
+        <div class="hero-meta">
+          <div><b data-qno></b>Quotation</div>
+          <div><b data-valid></b>Valid until</div>
+        </div>
+      </div>
+    </div>
+    <div class="stage-wrap" id="stageWrap">
+      <div class="hstage" id="hstage">
+        <figure class="card c-vid">
+          <video id="heroVid" src="media/hero.mp4" poster="media/hero-poster.jpg" muted loop playsinline preload="metadata" title="CRETC reviewees celebrating at a review event"></video>
+          <span class="vid-tag">CRETC event</span>
+          <button type="button" class="vid-btn" id="vidBtn" aria-label="Pause video"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
+        </figure>
+        <figure class="card c-p1 tap" tabindex="0"><img src="media/passer1.jpg" alt="Congratulations poster for a March 2026 LEPT passer"></figure>
+        <figure class="card c-p2 tap" tabindex="0"><img src="media/passer2.jpg" alt="Congratulations poster for another March 2026 LEPT passer"></figure>
+        <div class="card c-stat">
+          <div class="row"><div><b>97.81%</b><small>BEED</small></div><div><b>99.34%</b><small>BSED</small></div></div>
+          <p>Overall performance, as posted by CRETC with its March 2026 LEPT passers.</p>
+        </div>
+      </div>
+      <p class="stage-note">Video and photos from CRETC's Facebook page</p>
+    </div>
+  </div>
+</section>
+<div class="ribbon" aria-hidden="true"><div class="track" id="ribbon"></div></div>
+
+<section class="fit-sec" id="fit">
+  <div class="wrap">
+    <div class="fit-head">
+      <h2>Built around how you already work</h2>
+      <p class="intro-line">Your staff already run everything with Google Forms, Meet, Drive and Messenger. We keep those tools and simply give them one home under the CRETC name.</p>
+    </div>
+    <ol class="fit">
+      <li><p class="was">Today, exam links are posted in Messenger groups.</p><p class="now">Exam cards on each batch page. Tap one and the Google Form opens.</p></li>
+      <li><p class="was">Today, Meet links and face-to-face schedules are shared before every class.</p><p class="now">The next class, online or face to face, always on top.</p></li>
+      <li><p class="was">Today, recordings and feedback forms get buried in long chats.</p><p class="now">Recordings and feedback forms kept in one place, per batch.</p></li>
+      <li><p class="was">Today, five branches share one Facebook page.</p><p class="now">A page for every branch, with inquiries sent to the right one.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="design-sec" id="design">
+  <div class="wrap">
+    <h2>Your website, as a working sample</h2>
+    <p class="intro-line">Three pages made from CRETC's own posts: your programs, your passers, your branches. Click around inside it, change the colors, and see it on a phone.</p>
+    <div class="d-bar">
+      <div class="seg" role="group" aria-label="Sample page">
+        <button type="button" aria-pressed="true" data-mpage="home">Home</button>
+        <button type="button" aria-pressed="false" data-mpage="programs">Programs</button>
+        <button type="button" aria-pressed="false" data-mpage="branches">Branches</button>
+      </div>
+      <div class="d-controls">
+        <div class="swatches" role="group" aria-label="Sample color theme" id="themePick"></div>
+        <div class="toggle" role="group" aria-label="Preview size">
+          <button type="button" aria-pressed="true" data-view="desktop">Computer</button>
+          <button type="button" aria-pressed="false" data-view="phone">Phone</button>
+        </div>
+        <button type="button" class="notes-btn" id="notesBtn" aria-pressed="true"><i aria-hidden="true"></i>Design notes</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="frame" id="frame" data-mtheme="royal">
+        <div class="chrome"><i></i><i></i><i></i><div class="url"><svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="mockUrl">www.chainrinivarts.com</span></div></div>
+        <div class="mk-wrap">
+          <div class="mk" id="mk">
+            <div class="mk-nav">
+              <span class="mk-badge"><img src="media/mark.png" alt=""></span>
+              <div class="mk-brand"><b>CHAIN RINIVARTS</b><small>EDUCATIONAL TRAINING CENTER</small></div>
+              <div class="mk-links" id="mkLinks"></div>
+              <button type="button" class="mk-cta" data-mpage="branches">Enroll now</button>
+              <span class="mk-burger" aria-hidden="true"><i></i><i></i><i></i></span>
+              <button type="button" class="pin">1<span class="tip">The menu stays at the top while visitors scroll, with Enroll now always in reach.</span></button>
+            </div>
+
+            <div class="mk-page" data-page="home">
+              <div class="mk-hero">
+                <div class="mk-hero-copy">
+                  <div class="c2">QUALITY IS OUR PRIORITY</div>
+                  <h4>Achieve your dreams with <em>Alagang Chain.</em></h4>
+                  <p class="mk-hero-p">LEPT, PNLE, Civil Service and DepEd Ranking reviews and trainings, face to face in five branches and live online.</p>
+                  <div class="mk-btns"><button type="button" class="a" data-mpage="branches">Enroll now</button><button type="button" class="b" data-mpage="programs">See our programs</button></div>
+                </div>
+                <img class="mk-hero-img" src="media/p-class.jpg" alt="CRETC reviewees in a review session">
+                <button type="button" class="pin">2<span class="tip">Opens with your real reviewees, your tagline and two clear next steps.</span></button>
+              </div>
+              <div class="mk-facts">
+                <div><b>97.81%</b><span>BEED overall performance</span></div>
+                <div><b>99.34%</b><span>BSED overall performance</span></div>
+                <div><b>11 years</b><span>Beyond a decade</span></div>
+                <div><b>5</b><span>Branches in Central Luzon</span></div>
+                <button type="button" class="pin">3<span class="tip">Your results first. These figures update after every board exam.</span></button>
+              </div>
+              <div class="mk-sec">
+                <h5>Our programs</h5>
+                <p class="mk-lead">Reviews and trainings for teachers, nurses and civil servants.</p>
+                <div class="mk-progs">
+                  <button type="button" class="mk-prog" data-mpage="programs"><img src="media/lept2027.jpg" alt=""><b>LEPT Review</b><small>Licensure Examination for Professional Teachers.</small><em>Blended</em><span class="mk-more">Learn more</span></button><button type="button" class="mk-prog" data-mpage="programs"><span class="mk-tile"><b>PNLE</b><small>NURSING</small></span><b>PNLE Review</b><small>Philippine Nurse Licensure Examination.</small><span class="mk-more">Learn more</span></button><button type="button" class="mk-prog" data-mpage="programs"><img src="media/cse.jpg" alt=""><b>Civil Service Review</b><small>Live lectures via Google Meet, mock exams and final coaching.</small><em>Pure online</em><span class="mk-more">Learn more</span></button><button type="button" class="mk-prog" data-mpage="programs"><img src="media/deped.jpg" alt=""><b>DepEd Ranking Trainings</b><small>80-hour skills trainings, NC II equivalent.</small><span class="mk-more">Learn more</span></button>
+                </div>
+                <button type="button" class="pin">4<span class="tip">Each program opens its own page with inclusions, schedule and an enroll button.</span></button>
+              </div>
+              <div class="mk-sec mk-alt">
+                <div class="mk-pass">
+                  <div class="txt"><h5>Our new LPTs</h5><p class="mk-lead">Congratulations to our March 2026 LEPT passers.</p><b>BEED 97.81%</b><span>Overall performance</span><b>BSED 99.34%</b><span>Overall performance</span></div>
+                  <img src="media/passer1.jpg" alt="Passer spotlight: March 2026 LEPT">
+                  <img src="media/passer2.jpg" alt="Passer spotlight: March 2026 LEPT">
+                </div>
+                <button type="button" class="pin">5<span class="tip">A passers' wall: names, schools and ratings, shown only as CRETC approves.</span></button>
+              </div>
+              <div class="mk-dir">
+                <img src="media/director-face.jpg" alt="Arvin Christian De Los Reyes">
+                <div>
+                  <small>A message from the Managing Director</small>
+                  <h5>Arvin Christian De Los Reyes</h5>
+                  <p class="role">Managing Director, Chain Rinivarts Educational Training Center</p>
+                  <blockquote>Mr. De Los Reyes's message to every reviewee appears here, in his own words.</blockquote>
+                </div>
+                <button type="button" class="pin">6<span class="tip">A personal welcome from you, so reviewees know who leads CRETC.</span></button>
+              </div>
+              <div class="mk-band">
+                <img src="media/p-hall.jpg" alt="A full hall at a CRETC review program launch">
+                <div class="mk-band-copy">
+                  <h5>Review anywhere</h5>
+                  <p>Live lectures on Google Meet, recorded sessions and mock exams on Google Forms, all on one page for your batch.</p>
+                  <ul><li>Google Meet</li><li>Face-to-face classes</li><li>Recorded sessions</li><li>Google Form exams</li></ul>
+                  <div><button type="button" class="mk-btn" data-goto-portal>Reviewee sign in</button></div>
+                </div>
+              </div>
+              <div class="mk-sec">
+                <h5>How to enroll</h5>
+                <p class="mk-lead">Four steps from your first question to your first lecture.</p>
+                <div class="mk-steps"><div class="mk-step"><i>1</i><b>Choose your review</b><small>LEPT, PNLE, Civil Service or a DepEd Ranking training.</small></div><div class="mk-step"><i>2</i><b>Enroll online</b><small>Pick your branch and batch, and get a reference number.</small></div><div class="mk-step"><i>3</i><b>Confirm with your branch</b><small>The branch confirms your slot and payment.</small></div><div class="mk-step"><i>4</i><b>Join your batch</b><small>Sign in with Gmail to see your exams and Meet links.</small></div></div>
+                <button type="button" class="mk-btn" data-mpage="branches">Enroll now</button>
+                <button type="button" class="pin">7<span class="tip">Enrollment explained in four steps, ending at the online form.</span></button>
+              </div>
+              <div class="mk-sec mk-alt">
+                <h5>Experience Alagang Chain</h5>
+                <div class="mk-gal"><img src="media/p-enrolled.jpg" alt="Newly enrolled reviewees in class"><img src="media/enrolled1.jpg" alt="An officially enrolled reviewee"><img src="media/enrolled3.jpg" alt="Another officially enrolled reviewee"></div>
+              </div>
+              <div class="mk-sec" id="mkExtras" hidden>
+                <h5>Also on your website</h5>
+                <div class="mk-extra" id="mkExtraList"></div>
+              </div>
+              <div class="mk-sec mk-contact">
+                <div>
+                  <h5>Visit us</h5>
+                  <p class="mk-lead">Main office in Tarlac City.</p>
+                  <ul class="mk-info"><li><b>Address</b>Upper Ground Floor, V and S Building, Romulo Blvd., Cut-Cut 1st, Tarlac City 2300</li><li><b>Phone</b>0948 567 8868</li><li><b>Email</b>chainrinivartseducational@gmail.com</li></ul>
+                </div>
+                <div class="mk-map" role="img" aria-label="Map placeholder"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg><span>Google Map of the Tarlac office</span></div>
+                <button type="button" class="pin">8<span class="tip">Address, map and contacts, ready for first-time visitors.</span></button>
+              </div>
+            </div>
+
+            <div class="mk-page" data-page="programs" hidden>
+              <div class="mk-title"><small><button type="button" data-mpage="home">Home</button> / Programs</small><h5>Our programs</h5><p>Reviews and trainings, face to face and online.</p></div>
+              <div class="mk-sec">
+                <div class="mk-prow"><img src="media/lept2027.jpg" alt=""><div><h6>LEPT Review</h6><em>Blended face to face</em><p>Licensure Examination for Professional Teachers. Now enrolling for the March 2027 LEPT.</p><ul><li>Blended face-to-face review program</li><li>Elementary and secondary tracks</li><li>Inclusions and schedule as set by CRETC</li><li>Portal access for the whole batch</li></ul><button type="button" class="mk-btn" data-mpage="branches">Enroll in LEPT Review</button></div></div>
+                <div class="mk-prow"><span class="mk-tile"><b>PNLE</b><small>NURSING</small></span><div><h6>PNLE Review</h6><p>Philippine Nurse Licensure Examination. Program details, schedule and inclusions appear here as CRETC provides them.</p><button type="button" class="mk-btn" data-mpage="branches">Enroll in PNLE Review</button></div></div>
+                <div class="mk-prow"><img src="media/cse.jpg" alt=""><div><h6>Civil Service Review</h6><em>Pure online</em><p>For the Civil Service Examination, pen and paper test.</p><ul><li>Live lectures via Google Meet</li><li>Live rationalization sessions</li><li>Practice tests and mock exams</li><li>Exclusive review book</li><li>Unlimited access to recorded sessions</li><li>Final coaching and intensive review</li></ul><button type="button" class="mk-btn" data-mpage="branches">Enroll in Civil Service Review</button></div></div>
+                <div class="mk-prow"><img src="media/deped.jpg" alt=""><div><h6>DepEd Ranking Trainings</h6><em>80 hours each</em><p>A series of 80-hour skills trainings (NC II equivalent) for DepEd teaching and non-teaching applicants.</p><span class="grp-l">For teacher applicants</span><ul><li>Computer literacy</li><li>Multimedia and graphic design</li><li>Events management</li><li>Healthcare services</li><li>Pedagogical approaches in majorship subjects</li><li>Basic life support</li></ul><span class="grp-l">For non-teaching applicants</span><ul><li>ICT in advanced office management</li><li>HR management in event and corporate planning</li><li>Bookkeeping and taxation for non-accountants</li></ul><button type="button" class="mk-btn" data-mpage="branches">Enroll in a training</button></div></div>
+                <button type="button" class="pin">1<span class="tip">One section per program: who it is for, what is included, and an enroll button on each.</span></button>
+              </div>
+            </div>
+
+            <div class="mk-page" data-page="branches" hidden>
+              <div class="mk-title"><small><button type="button" data-mpage="home">Home</button> / Branches</small><h5>Our branches</h5><p>Five branches across Central Luzon, one Alagang Chain.</p></div>
+              <div class="mk-sec">
+                <div class="mk-branches">
+                  <div class="mk-br main"><span class="tag">Main office</span><h6>Tarlac City</h6><p>Upper Ground Floor, V and S Building, Romulo Blvd., Cut-Cut 1st, Tarlac City 2300</p><dl><dt>Phone</dt><dd>0948 567 8868</dd><dt>Branch</dt><dd>0917 503 0458</dd><dt>Hours</dt><dd>8:00 AM to 5:00 PM</dd><dt>Facebook</dt><dd>ChainRinivarts Tarlac</dd></dl></div>
+                  <div class="mk-br"><h6>Cabanatuan City</h6><p>Address, contact number and office hours shown here.</p></div>
+                  <div class="mk-br"><h6>Maria Aurora</h6><p>Address, contact number and office hours shown here.</p></div>
+                  <div class="mk-br"><h6>Iba</h6><p>Address, contact number and office hours shown here.</p></div>
+                  <div class="mk-br"><h6>Mabalacat</h6><p>Address, contact number and office hours shown here.</p></div>
+                </div>
+                <button type="button" class="pin">1<span class="tip">Every branch with its own address, map, contacts and Facebook page.</span></button>
+              </div>
+              <div class="mk-sec mk-adm">
+                <div class="mk-req"><h6>Before you enroll</h6><p>CRETC's requirements and current promos appear here, exactly as each branch provides them.</p><ul><li>Requirements for each program</li><li>Next batch schedule per branch</li><li>Fees, promos and payment options</li></ul></div>
+                <div class="mk-form"><h6>Enroll online</h6><span class="f">Full name</span><span class="f">Mobile number</span><span class="f">Email (Google account)</span><span class="f sel">Program</span><span class="f sel">Branch</span><span class="mk-btn as">Submit enrollment</span></div>
+                <button type="button" class="pin">2<span class="tip">Online enrollment saved to CRETC's Google Sheet, with the branch notified by email.</span></button>
+              </div>
+            </div>
+
+            <div class="mk-foot">
+              <div><span class="fb">CHAIN RINIVARTS</span><p>Educational Training Center<br>Quality is our priority.</p></div>
+              <div><h6>Branches</h6><p>Tarlac City (main)<br>Cabanatuan City<br>Maria Aurora<br>Iba<br>Mabalacat</p></div>
+              <div><h6>Connect</h6><p>0948 567 8868<br>chainrinivartseducational@gmail.com<br>Facebook: Chain Rinivarts Review<br>TikTok: @chainrinivarts</p></div>
+            </div>
+            <button type="button" class="mk-chat" id="mkChat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Ask Alagang Chain</span><small id="mkChatTag"></small></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note-line">This is a sample design. Photos and posters are from CRETC's Facebook page, so some look soft. The finished website uses CRETC's original, high-resolution files, and wording you approve.</p>
+  </div>
+</section>
+
+<section class="deep" id="portal">
+  <div class="wrap portal">
+    <div>
+      <h2>One page per batch, as easy as Messenger</h2>
+      <p class="intro-line">Today your staff post exam links, Meet links and feedback forms in Messenger groups. On the new site they post the same links once, and each batch sees them as neat cards. Exams stay in Google Forms, so results are collected the way you already trust.</p>
+      <div class="vseg" role="tablist" aria-label="Portal view">
+        <button type="button" role="tab" aria-selected="true" data-view-as="reviewee">Reviewee view</button>
+        <button type="button" role="tab" aria-selected="false" data-view-as="staff">Staff view</button>
+        <button type="button" role="tab" aria-selected="false" data-view-as="admin">Admin view</button>
+      </div>
+      <p class="vdesc" id="vdesc"></p>
+      <p class="p-note">Sample data only. Nothing here comes from CRETC's modules, and nothing you type is sent anywhere.</p>
+    </div>
+    <div class="lap">
+      <div class="chrome"><i></i><i></i><i></i><div class="url"><svg class="lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span id="appUrl">chainrinivarts.com/portal</span></div></div>
+      <div class="app">
+        <div class="app-head"><span class="mk-badge"><img src="media/mark.png" alt=""></span><div><b>CRETC PORTAL</b><small id="appSub">Reviewee view</small></div><span class="sd">Sample data</span></div>
+        <div class="ppane" id="pv-reviewee" role="tabpanel" aria-label="Reviewee view"></div>
+        <div class="ppane" id="pv-staff" role="tabpanel" aria-label="Staff view" hidden></div>
+        <div class="ppane" id="pv-admin" role="tabpanel" aria-label="Admin view" hidden></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work-sec" id="work">
+  <div class="wrap">
+    <h2>Websites we have served</h2>
+    <p class="intro-line">These are live. Click a screen to explore it, or open the full website.</p>
+    <div class="tabs" role="tablist" aria-label="Our websites" id="tabs"></div>
+    <div class="car">
+      <div class="car-frame">
+        <div class="chrome"><i></i><i></i><i></i><div class="url" id="carUrl"></div></div>
+        <div class="view" id="view">
+          <div class="loading" id="loading">Loading the website…</div>
+        </div>
+      </div>
+      <button class="arrow prev" type="button" aria-label="Previous website" data-step="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="arrow next" type="button" aria-label="Next website" data-step="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="car-info">
+      <div>
+        <span class="counter" id="carCount"></span>
+        <h3 id="carName">Ina-Inakay Center Inc.</h3>
+        <p class="kind" id="carKind"></p>
+        <div class="acts"><a class="btn btn-gold" id="carVisit" href="#" target="_blank" rel="noopener">Visit the full website</a></div>
+      </div>
+      <div>
+        <p class="add-label">Like something here? Add it to CRETC's website.</p>
+        <div class="adds" id="carAdds"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="menu-sec">
+  <div class="wrap">
+    <div class="center">
+      <h2>Choose your package</h2>
+      <p class="intro-line">Three packages, each priced below its items ordered one by one. Every package includes chainrinivarts.com.</p>
+    </div>
+    <div class="menu-card">
+      <div class="menu-crest" aria-hidden="true"><img src="media/mark.png" alt=""></div>
+      <div class="menu" id="courses"></div>
+    </div>
+    <div class="domain">
+      <p class="lab">Your web address</p>
+      <div class="host"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>chainrinivarts.com</div>
+      <p>Included in every package: registered for CRETC, connected to your website, and secured with https. Your staff keep using their Gmail.</p>
+    </div>
+    <div class="alacarte">
+      <p>Prefer to pick item by item?</p>
+      <button class="btn btn-line" type="button" data-open-drawer>Add or remove items</button>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="quote-sec">
+  <div class="wrap">
+    <h2>Your quotation</h2>
+    <div class="quote">
+      <div class="ticket-col">
+        <div class="rail-bar"></div>
+        <div class="ticket" id="ticket">
+          <div class="t-head"><b>CHAIN RINIVARTS</b><span>Website and portal order</span></div>
+          <ul class="t-lines" id="tLines" aria-live="polite"></ul>
+          <div class="t-sum">
+            <div class="t-row save" id="tSaveRow"><span>Package saving</span><span id="tSave"></span></div>
+            <div class="t-total"><span>Total</span><strong id="tTotal"></strong></div>
+            <div class="t-row" id="tMonthRow"><span>Optional maintenance</span><span id="tMonth"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="q-side">
+        <div class="big" id="qBig"></div>
+        <p class="big-sub" id="qSub"></p>
+        <div class="warranty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.4-3 7.8-7 9-4-1.2-7-4.6-7-9V6l7-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>
+          <div><b>12 months of free repairs</b><span>If anything on the website or portal breaks or stops working in the first year, we fix it at no cost. Monthly maintenance is optional, only if you want us to handle your updates.</span></div>
+        </div>
+        <div class="warranty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg>
+          <div><b>Your materials stay yours</b><span>Exams stay in your Google Forms, files in your Google Drive, and scores in your Google Sheets. The portal only links to them.</span></div>
+        </div>
+        <div class="upsell" id="upsell" hidden></div>
+        <div class="q-acts">
+          <button class="btn btn-gold" type="button" id="btnPrint">Save the quotation as PDF</button>
+        </div>
+        <p class="reach" id="reach"></p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li><b>Approve</b><span>Sign the quotation and pay the down payment.</span></li>
+      <li><b>Design</b><span>We finish the design with your photos, programs and branch details.</span></li>
+      <li><b>Build</b><span>You review a private preview of the website and portal on phone and computer.</span></li>
+      <li><b>Launch</b><span>chainrinivarts.com goes live. The portal starts with one batch, then opens to every branch. The warranty starts.</span></li>
+    </ol>
+    <p class="terms-link"><button type="button" id="termsBtn" aria-expanded="false">Read the full terms</button></p>
+    <div class="terms" id="terms">
+      <ul>
+        <li>Prices are valid until <span data-valid></span>.</li>
+        <li>Two rounds of revisions per page are included.</li>
+        <li>Includes registration of chainrinivarts.com, connected to the website. Renewal after the registration period is billed at cost.</li>
+        <li>Secure hosting with https is included. All website files are handed over to CRETC after full payment.</li>
+        <li>Exams, files and scores stay in CRETC's own Google Forms, Drive and Sheets. CRETC keeps ownership of all modules, exam items and reviewee records. A privacy notice and consent under the Data Privacy Act of 2012 (RA 10173) are built in.</li>
+        <li>Not included: paid ads, professional photo or video shoots, and paid plans of outside tools if usage outgrows their free tier.</li>
+        <li>We need from CRETC: a high-resolution logo, photos, program details, and each branch's address and contacts.</li>
+        <li>The scope is the items listed in this quotation. New features requested after approval are quoted separately.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="deep signoff">
+  <div class="wrap">
+    <img class="crest-sm" src="media/mark.png" alt="">
+    <h2>Thank you, Mr. De Los Reyes.</h2>
+    <div class="names">
+      <div><p>Prepared by</p><strong data-devname></strong><p data-devcontact></p></div>
+      <div><p>For approval of</p><strong>Arvin Christian De Los Reyes</strong><p>Managing Director, Chain Rinivarts Educational Training Center</p></div>
+    </div>
+    <p class="fine">This is a temporary sample site for proposal purposes only. Photos, posters and the video belong to CRETC.</p>
+    <button class="again" type="button" id="replay">Watch the opening again</button>
+  </div>
+</section>
+</main>
+
+<div class="pill" id="pill">
+  <div><small id="pillLabel"></small><strong id="pillTotal"></strong></div>
+  <a class="btn btn-gold" href="#quote">View quotation</a>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="scrim" data-close-drawer></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="sheet-head">
+      <div><h3 id="drawerTitle">Pick item by item</h3><p>Tick or untick any item. Your package saving is kept wherever it applies.</p></div>
+      <button class="x" type="button" data-close-drawer aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="sheet-body" id="drawerBody"></div>
+    <div class="sheet-foot"><div><small id="dLabel"></small><strong id="dTotal"></strong></div><button class="btn btn-gold" type="button" data-close-drawer>Done</button></div>
+  </div>
+</div>
+
+<div class="cpanel" id="cpanel" role="dialog" aria-label="Ask Alagang Chain, sample assistant">
+  <div class="cp-head"><span class="mk-badge"><img src="media/mark.png" alt=""></span><div><b>Ask Alagang Chain</b><small>Website assistant (sample)</small></div><button class="x" type="button" data-chat-close aria-label="Close the assistant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="cp-add" id="cpAdd"><span>This assistant is an add-on.</span><button type="button" data-add="ai">Add it to the quotation</button></div>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form class="ask" id="askForm" autocomplete="off">
+    <input id="askInput" type="text" placeholder="Ask about reviews or branches" aria-label="Your question">
+    <button class="btn btn-gold" type="submit">Send</button>
+  </form>
+</div>
+
+<div class="fmodal" id="fmodal">
+  <div class="scrim" data-fm-close></div>
+  <div class="fm-sheet" role="dialog" aria-modal="true" aria-labelledby="fmTitle">
+    <div class="fm-bar"><b id="fmTitle">Exam</b><button class="x" type="button" data-fm-close aria-label="Close the form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="fm-body" id="fmBody"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<div id="printArea"></div>
+
+<script>
+/* =====================================================================
+   EDIT HERE: your details, prices, packages and sample websites.
+   ===================================================================== */
+const CONFIG = {
+  developer: "Jeith Ruelson M. Parazo",
+  role: "Web Developer",
+  email: "jeithparazo09@gmail.com",
+  phone: "",
+  client: "Mr. Arvin Christian De Los Reyes",
+  clientName: "Arvin Christian De Los Reyes",
+  clientRole: "Managing Director",
+  org: "Chain Rinivarts Educational Training Center",
+  orgEmail: "chainrinivartseducational@gmail.com",
+  orgPhone: "0948 567 8868",
+  quoteNo: "CRETC-WEB-2026-1015",
+  issued: "2026-10-15",
+  validDays: 30,
+  downPct: 50,
+  warrantyMonths: 12,
+  defaultTier: "signature",
+  domain: "chainrinivarts.com"
+};
+
+const GROUPS=[["pages","Pages",""],["engage","Reach and enrollment",""],["portal","Reviewee portal","Works with your Google Forms, Meet and Drive"],["ai","AI assistant",""],["support","Support",""]];
+
+/* unit: "once" | "month". needs: an item that must also be selected. */
+const FEATURES = [
+  {id:"base", group:"base", locked:true, price:11900, unit:"once", days:10, short:"Website with chainrinivarts.com", name:"Website with chainrinivarts.com", desc:"Home, About, Programs, Results, Enroll and Contact pages. Phone-ready, secure hosting, Google search setup, and the chainrinivarts.com address registered and connected."},
+  {id:"progpages", group:"pages", price:1500, unit:"once", days:1, page:"Program pages", short:"A page for each program", name:"A page for each program", desc:"LEPT, PNLE, Civil Service and DepEd Ranking trainings: inclusions, schedule and an enroll button."},
+  {id:"branches", group:"pages", price:1500, unit:"once", days:1, page:"Branch pages", short:"Branch pages", name:"A page for each branch", desc:"Cabanatuan City, Maria Aurora, Tarlac, Iba and Mabalacat, each with address, map, contacts and hours."},
+  {id:"passers", group:"pages", price:1500, unit:"once", days:1, extra:"Passers' wall", short:"Passers' wall and results", name:"Passers' wall and results", desc:"Board passers, ratings and overall performance, updated after every exam."},
+  {id:"faculty", group:"pages", price:1500, unit:"once", days:1, extra:"Lecturers", short:"Lecturers and speakers", name:"Lecturers and speakers", desc:"Your lecturers with photos, specialties and programs."},
+  {id:"director", group:"pages", price:1500, unit:"once", days:1, extra:"Director's message", short:"Managing Director's message", name:"Message from the Managing Director", desc:"A personal welcome with your photo and your own words."},
+  {id:"news", group:"pages", price:1500, unit:"once", days:1, page:"News", short:"News and announcements", name:"News and announcements", desc:"New batches, schedules, promos and events, posted by your staff."},
+  {id:"gallery", group:"pages", price:1500, unit:"once", days:1, extra:"Photo and video gallery", short:"Photo and video gallery", name:"Photo and video gallery", desc:"Program launches, enrollment days and celebrations."},
+  {id:"downloads", group:"pages", price:1500, unit:"once", days:1, extra:"Downloads", short:"Downloads center", name:"Downloads center", desc:"Requirements, forms and brochures to download."},
+  {id:"faq", group:"pages", price:1500, unit:"once", days:1, extra:"FAQ", short:"Frequently asked questions", name:"Frequently asked questions", desc:"Schedules, fees, online sessions and requirements."},
+  {id:"fb", group:"engage", price:1500, unit:"once", days:1, extra:"Facebook and TikTok", short:"Facebook and TikTok showcase", name:"Facebook and TikTok showcase", desc:"Your newest Facebook posts appear automatically, with your TikTok linked."},
+  {id:"inquiry", group:"engage", price:1500, unit:"once", days:1, extra:"Inquiry form", short:"Inquiry form", name:"Inquiry form", desc:"Questions are saved to a Google Sheet and emailed to the right branch."},
+  {id:"messenger", group:"engage", price:1500, unit:"once", days:1, extra:"Messenger button", short:"Messenger chat button", name:"Messenger chat button", desc:"Visitors message your Facebook page in one tap."},
+  {id:"enroll", group:"engage", price:2500, unit:"once", days:2, page:"Enroll online", short:"Online enrollment", name:"Online enrollment", desc:"Reviewees pick a program, branch and batch, and get a reference number. Saved to your Google Sheet."},
+  {id:"portal", group:"portal", price:5000, unit:"once", days:4, page:"Reviewee portal", short:"Reviewee portal with Gmail sign-in", name:"Reviewee portal with Gmail sign-in", desc:"One page per batch. Staff keep the list of enrolled Gmail addresses in a Google Sheet, and only those reviewees get in."},
+  {id:"formsview", group:"portal", price:2500, unit:"once", days:2, needs:"portal", short:"Exam thumbnails with Google Forms", name:"Exam thumbnails with Google Forms", desc:"Reviewees tap an exam card and the Google Form opens on the page. Answers and scores stay in your Google Sheets."},
+  {id:"staffpost", group:"portal", price:2500, unit:"once", days:2, needs:"portal", short:"Post box for staff and lecturers", name:"Post box for staff, lecturers and trainers", desc:"Post exams, Meet links, face-to-face schedules, recordings and feedback forms to a batch in one step, then copy the post to your GC."},
+  {id:"views", group:"portal", price:6000, unit:"once", days:3, needs:"portal", short:"Admin, staff and reviewee views", name:"Admin, staff and reviewee views", desc:"An admin screen to open and close batches, manage who may sign in, and assign staff, lecturers and trainers, without touching the Google Sheet."},
+  {id:"attendance", group:"portal", price:3000, unit:"once", days:2, needs:"portal", short:"QR attendance for face-to-face classes", name:"QR attendance for face-to-face classes", desc:"Reviewees and trainees scan a QR code at the venue. Attendance goes to a Google Sheet, ready for training hours and certificates."},
+  {id:"ai", group:"ai", price:8000, unit:"once", days:4, short:"AI assistant", name:"AI assistant, Ask Alagang Chain", desc:"Answers questions about programs, branches and enrolling, day and night, using only what CRETC approves."},
+  {id:"training", group:"support", price:2000, unit:"once", days:0, short:"Staff training", name:"Staff training", desc:"Your staff learn to update pages, post news and manage the portal."},
+  {id:"content", group:"support", price:1500, unit:"once", days:1, short:"Content writing help", name:"Content writing help", desc:"We polish your page text and prepare your photos."},
+  {id:"maint", group:"support", price:2500, unit:"month", days:0, short:"Optional maintenance", name:"Optional monthly maintenance", desc:"We handle your updates after launch. Repairs are already free for 12 months."}
+];
+
+const TIERS = [
+  {id:"starter", name:"Starter", price:19990, for:"A complete public website that brings in inquiries.",
+   items:["progpages","branches","passers","news","fb","inquiry","messenger"]},
+  {id:"signature", name:"Signature", price:34990, best:true, for:"The website plus a reviewee portal where staff post exams, Meet links and recordings.",
+   items:["progpages","branches","passers","faculty","director","gallery","news","fb","inquiry","messenger","enroll","portal","formsview","staffpost","training"]},
+  {id:"complete", name:"Complete", price:49990, for:"Everything, with the admin view, QR attendance for face-to-face classes and the AI assistant.",
+   items:FEATURES.filter(f=>!f.locked && f.unit==="once").map(f=>f.id)}
+];
+const HIGHLIGHT=["portal","formsview","staffpost","views","attendance","ai","enroll"];
+
+/* Sample websites, shown live in the carousel.
+   embed:true  shows the real site inside the page.
+   embed:false shows samples/<id>.jpg if present, otherwise a drawn preview. */
+const SAMPLES = [
+  {id:"inakay", name:"Ina-Inakay Center Inc.", kind:"Organization website, 22 pages on its own domain, with online forms and an AI assistant.",
+   url:"https://www.ina-inakay.com", embed:true, features:["gallery","fb","inquiry","enroll","ai"]},
+  {id:"coed", name:"TSU College of Education", kind:"University college website with program pages, faculty and college news.",
+   url:"https://coed.tsu.edu.ph", embed:true, features:["progpages","faculty","news","downloads","gallery"]},
+  {id:"mvcs", name:"Mountain View Christian School", kind:"School website with faculty and registrar portals and three AI assistants.",
+   url:"https://sites.google.com/view/mvcs-san-jose-inc/home", embed:false, features:["portal","views","ai","downloads"]},
+  {id:"records", name:"Records and Evidence Portal", kind:"Accreditation evidence portal used on a kiosk during a quality assessment visit.",
+   url:"https://coed-tsu.github.io/records/", embed:true, features:["views","downloads"]},
+  {id:"btvted", name:"BTVTEd Survey Visit", kind:"Program accreditation portfolio prepared for a Level I survey visit.",
+   url:"https://jeremiemercadoportfolio.my.canva.site/btvted-level-i-site", embed:false, features:["downloads","gallery"]}
+];
+
+/* What the sample website assistant knows (from CRETC's public posts only). */
+const KB = [
+  {w:.5,k:["program","review","offer","course","training","exam"], a:"CRETC offers:<br>1. LEPT Review (Licensure Examination for Professional Teachers)<br>2. PNLE Review (nurses)<br>3. Civil Service Exam Review<br>4. DepEd Ranking specialized trainings<br>Which one would you like to know about?"},
+  {k:["lept","let","teacher","licensure","lpt","beed","bsed"], a:"The LEPT Review is now enrolling for the March 2027 LEPT, as a blended face-to-face review program. CRETC's overall performance: BEED 97.81% and BSED 99.34%."},
+  {k:["pnle","nurse","nursing"], a:"CRETC also offers a PNLE Review for nurses. Your branch will share the next schedule and inclusions."},
+  {k:["cse","civil service","civil","service","ppt","government"], a:"The Civil Service Exam Review is a pure online program with live lectures via Google Meet, live rationalization sessions, practice tests and mock exams, an exclusive review book, unlimited access to recorded sessions, and final coaching."},
+  {k:["deped","ranking","nc ii","80","applicant","non-teaching"], a:"The DepEd Ranking trainings are a series of 80-hour skills trainings (NC II equivalent) for teaching and non-teaching applicants, such as computer literacy, events management, basic life support, and bookkeeping and taxation for non-accountants."},
+  {k:["branch","branches","where","location","address","near","tarlac","cabanatuan","aurora","iba","mabalacat"], a:"CRETC has five branches: Tarlac City (main office), Cabanatuan City, Maria Aurora, Iba and Mabalacat. The Tarlac office is at Upper Ground Floor, V and S Building, Romulo Blvd., Cut-Cut 1st, Tarlac City, open 8:00 AM to 5:00 PM."},
+  {k:["online","meet","google","recorded","recording","zoom","live"], a:"Online lectures run live on Google Meet, and enrolled reviewees can watch recorded sessions in the reviewee portal."},
+  {k:["enroll","enrol","register","apply","sign up","join","reserve","slot"], a:"You can enroll online: choose your review, branch and batch, and you'll get a reference number. Your branch then confirms your slot."},
+  {k:["fee","fees","price","how much","cost","rate","tuition","pay","payment","promo"], a:"I won't guess the fees. Your branch sends the current rates and promos. You can call 0948 567 8868 or message the CRETC Facebook page."},
+  {k:["contact","call","phone","number","email","facebook","tiktok","message"], a:"Call 0948 567 8868, email chainrinivartseducational@gmail.com, or message the Chain Rinivarts Review page on Facebook. TikTok: @chainrinivarts."},
+  {k:["result","passing","passer","performance","rate","topnotcher"], a:"CRETC's overall performance with its March 2026 LEPT passers: BEED 97.81% and BSED 99.34%."},
+  {k:["hi","hello","good morning","good afternoon","good evening","hey","kumusta"], a:"Hello! I'm the Alagang Chain assistant. Ask me about our reviews, branches or how to enroll."},
+  {k:["thank","salamat"], a:"You're welcome! Anything else about CRETC?"}
+];
+const CHIPS=["What reviews do you offer?","Where are your branches?","What's in the Civil Service review?","DepEd Ranking trainings?","How much is the review?"];
+
+/* ===================================================================== */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const r2=n=>Math.round(n*100)/100;
+const fmt=n=>{const v=r2(n);return v.toLocaleString("en-PH",{minimumFractionDigits:v%1?2:0,maximumFractionDigits:2})};
+const peso=n=>"₱"+fmt(n);
+const pesoBig=n=>`<span class="cur">₱</span>${fmt(n)}`;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const byId=Object.fromEntries(FEATURES.map(f=>[f.id,f]));
+const tierById=Object.fromEntries(TIERS.map(t=>[t.id,t]));
+const LS="cretc-proposal-v1:";
+const store={get(k){try{return JSON.parse(localStorage.getItem(LS+k))}catch(e){return null}},set(k,v){try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}}};
+const issued=new Date(CONFIG.issued+"T00:00:00"), validUntil=new Date(issued.getTime()+CONFIG.validDays*864e5);
+const fmtDate=d=>d.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+const reduced=()=>matchMedia("(prefers-reduced-motion: reduce)").matches;
+let selected=new Set(), lastAdded=null, mpage="home";
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove("show"),2600)}
+
+/* ---------- pricing ---------- */
+function price(sel){
+  const once=[...sel].map(id=>byId[id]).filter(f=>f&&f.unit==="once");
+  const list=byId.base.price+once.reduce((a,f)=>a+f.price,0);
+  let best={total:list,tier:null,extras:once.map(f=>f.id)};
+  TIERS.forEach(t=>{
+    if(!t.items.every(id=>sel.has(id))) return;
+    const extras=once.filter(f=>!t.items.includes(f.id));
+    const total=t.price+extras.reduce((a,f)=>a+f.price,0);
+    if(total<best.total) best={total,tier:t,extras:extras.map(f=>f.id)};
+  });
+  const month=[...sel].map(id=>byId[id]).filter(f=>f&&f.unit==="month").reduce((a,f)=>a+f.price,0);
+  const days=byId.base.days+once.reduce((a,f)=>a+(f.days||0),0);
+  return {...best,total:r2(best.total),list,save:list-best.total,month,days,count:once.length+1};
+}
+const tierList=t=>byId.base.price+t.items.reduce((a,id)=>a+byId[id].price,0);
+const weeks=d=>Math.max(3,Math.ceil(d/5));
+const label=P=>(P.tier?P.tier.name:"Custom")+(P.tier&&P.extras.length?` + ${P.extras.length} extra${P.extras.length>1?"s":""}`:"");
+
+/* ---------- menu ---------- */
+function renderMenu(){
+  $("#courses").innerHTML=TIERS.map(t=>{
+    const ord=[...t.items.filter(id=>HIGHLIGHT.includes(id)).sort((a,b)=>HIGHLIGHT.indexOf(a)-HIGHLIGHT.indexOf(b)),...t.items.filter(id=>!HIGHLIGHT.includes(id))];
+    const items=["Website with chainrinivarts.com",...ord.map(id=>byId[id].short)];
+    const max=t.best?12:8, shown=items.slice(0,max);
+    return `<article class="course ${t.best?"best":""}" data-tier="${t.id}">
+      <div class="chef">${t.best?"Recommended for CRETC":t.id==="complete"?"Best value":""}</div>
+      <h3>${t.name}</h3>
+      <p class="for">${t.for}</p>
+      <div class="price">${pesoBig(t.price)}</div>
+      <p class="reg"><s>${peso(tierList(t))}</s><b>Save ${peso(tierList(t)-t.price)}</b></p>${t.id==="complete"?`<p class="upnote">Only ${peso(t.price-tierById.signature.price)} more than Signature</p>`:""}
+      <div class="orn"></div>
+      <ul>${shown.map((x,i)=>`<li class="${i&&HIGHLIGHT.includes(ord[i-1])?"hl":""}">${x}</li>`).join("")}${items.length>max?`<li class="more">and ${items.length-max} more</li>`:""}</ul>
+      <button class="btn ${t.best?"btn-gold":"btn-line"}" type="button" data-choose="${t.id}">Choose ${t.name}</button>
+    </article>`;
+  }).join("");
+}
+function renderDrawer(){
+  $("#drawerBody").innerHTML=GROUPS.map(([g,n,sub])=>`<div class="grp">${n}${sub?`<small>${sub}</small>`:""}</div>`+FEATURES.filter(f=>f.group===g).map(f=>{
+    const p=f.unit==="month"?[peso(f.price),"per month"]:[peso(f.price),"one-time"];
+    return `<div class="opt"><input type="checkbox" id="o-${f.id}" data-f="${f.id}"><label for="o-${f.id}"><span class="name">${f.name}</span><span class="desc">${f.desc}${f.needs?" Comes with the reviewee portal.":""}</span><span class="inpkg" data-inpkg="${f.id}"></span></label><div class="pp">${p[0]}<small>${p[1]}</small></div></div>`;
+  }).join("")).join("");
+}
+
+/* ---------- sync ---------- */
+function sync(){
+  const P=price(selected);
+  $$("input[data-f]").forEach(i=>i.checked=selected.has(i.dataset.f));
+  $$("[data-inpkg]").forEach(s=>s.textContent=(P.tier&&P.tier.items.includes(s.dataset.inpkg))?`In your ${P.tier.name} package`:"");
+  $$("[data-tier]").forEach(el=>{
+    const t=tierById[el.dataset.tier], on=P.tier&&P.tier.id===t.id;
+    el.classList.toggle("chosen",!!on);
+    el.querySelector("[data-choose]").textContent=on?"Your choice":`Choose ${t.name}`;
+  });
+  let L="";
+  if(P.tier){
+    L+=`<li class="pkg ${lastAdded==="tier"?"new":""}"><span>${P.tier.name}</span><span>${pesoBig(P.tier.price)}</span></li>`;
+    L+=["Website with chainrinivarts.com",...P.tier.items.map(id=>byId[id].short)].map(x=>`<li class="sub"><span>${x}</span><span></span></li>`).join("");
+  }else L+=`<li><span>Website with chainrinivarts.com</span><span>${peso(byId.base.price)}</span></li>`;
+  P.extras.forEach(id=>{
+    L+=`<li class="${lastAdded===id?"new":""}"><span>${byId[id].short}</span><span>${peso(byId[id].price)}</span></li>`;
+  });
+  L+=`<li class="sub"><span>Web address: ${CONFIG.domain} (included)</span><span></span></li>`;
+  $("#tLines").innerHTML=L;
+  $("#tSaveRow").style.display=P.save>0?"flex":"none"; $("#tSave").textContent="−"+peso(P.save);
+  $("#tTotal").innerHTML=pesoBig(P.total);
+  $("#tMonthRow").style.display=P.month?"flex":"none"; $("#tMonth").textContent=peso(P.month)+"/month";
+  const down=r2(P.total*CONFIG.downPct/100);
+  $("#qBig").innerHTML=pesoBig(P.total);
+  $("#qSub").innerHTML=`<b>${peso(down)}</b> to start, <b>${peso(r2(P.total-down))}</b> on launch. Ready in about <b>${weeks(P.days)} weeks</b> once your content is in.`;
+  $("#pillLabel").textContent=P.tier?`${P.tier.name} package`+(P.extras.length?` + ${P.extras.length} extra${P.extras.length>1?"s":""}`:""):"Your selection";
+  $("#pillTotal").innerHTML=pesoBig(P.total);
+  $("#dLabel").textContent=P.tier?`${label(P)}, saving ${peso(P.save)}`:"Custom selection"; $("#dTotal").innerHTML=pesoBig(P.total);
+  const up=$("#upsell"), C=tierById.complete, miss=C.items.filter(id=>!selected.has(id)), gap=r2(C.price-P.total);
+  up.hidden=!(P.tier&&P.tier.id==="signature"&&miss.length&&gap>0);
+  if(!up.hidden) up.innerHTML=`<b>Upgrade to Complete for ${peso(gap)} more</b><p>Adds ${upList(miss)}. Worth ${peso(miss.reduce((a,id)=>a+byId[id].price,0))} if ordered one by one.</p><button class="btn btn-navy" type="button" data-choose="complete">Upgrade to Complete</button>`;
+  renderMock(); renderAdds(); save(); lastAdded=null;
+}
+function upList(miss){
+  const nm={views:"the admin view",attendance:"QR attendance for face-to-face classes",ai:"the AI assistant",downloads:"a downloads center",faq:"an FAQ page",content:"content writing help"};
+  const top=[...miss].sort((a,b)=>(HIGHLIGHT.indexOf(b)>-1)-(HIGHLIGHT.indexOf(a)>-1)).map(id=>nm[id]||byId[id].short);
+  const show=top.slice(0,3), rest=top.length-show.length;
+  return rest>0?`${show.join(", ")} and ${rest} more`:show.length>1?`${show.slice(0,-1).join(", ")} and ${show[show.length-1]}`:show[0];
+}
+function renderMock(){
+  const nav=[["home","Home"],["programs","Programs"],["branches","Branches"]]
+    .concat(selected.has("passers")?[["","Results"]]:[]).concat(selected.has("news")?[["","News"]]:[])
+    .concat(selected.has("portal")?[["portal","Portal"]]:[]).concat([["","Contact"]]);
+  $("#mkLinks").innerHTML=nav.map(([id,n])=>id==="portal"?`<button type="button" data-goto-portal>${n}</button>`:id?`<button type="button" data-mpage="${id}" class="${id===mpage?"on":""}">${n}</button>`:`<span>${n}</span>`).join("");
+  const ex=FEATURES.filter(f=>(f.extra||f.page)&&selected.has(f.id)&&!["progpages","branches","enroll","portal"].includes(f.id));
+  $("#mkExtras").hidden=!ex.length;
+  $("#mkExtraList").innerHTML=ex.map(f=>`<span>${f.extra||f.page}</span>`).join("");
+  const ai=selected.has("ai");
+  $("#mkChatTag").textContent=ai?"":"(add-on)";
+  $("#cpAdd").hidden=ai;
+  $("#mockUrl").textContent="www."+CONFIG.domain+(mpage==="home"?"":"/"+mpage);
+}
+const hashOf=()=>"q="+[...selected].join(",");
+function save(){store.set("sel",[...selected]);try{history.replaceState(null,"",location.pathname+location.search+"#"+hashOf())}catch(e){}}
+function load(){
+  const m=location.hash.match(/q=([^&]*)/);
+  if(m) return fixNeeds(new Set(decodeURIComponent(m[1]).split(",").filter(id=>byId[id]&&!byId[id].locked)));
+  const s=store.get("sel"); if(Array.isArray(s)) return fixNeeds(new Set(s.filter(id=>byId[id]&&!byId[id].locked)));
+  return new Set(tierById[CONFIG.defaultTier].items);
+}
+function fixNeeds(s){[...s].forEach(id=>{const n=byId[id].needs;if(n)s.add(n)});return s}
+function toggleFeature(id,on){
+  const f=byId[id]; let msg=f.short+(on?" added":" removed");
+  if(on){selected.add(id);lastAdded=id;if(f.needs&&!selected.has(f.needs)){selected.add(f.needs);msg=`${f.short} added, with the reviewee portal it needs`}}
+  else{selected.delete(id);const deps=FEATURES.filter(x=>x.needs===id&&selected.has(x.id));if(deps.length){deps.forEach(x=>selected.delete(x.id));msg=`${f.short} removed, with ${deps.map(x=>x.short.toLowerCase()).join(", ")}`}}
+  sync(); return msg;
+}
+
+/* ---------- sample design colors (the proposal itself never changes) ---------- */
+const THEMES=[{id:"royal",name:"Royal",acc:"#F5B10C"},{id:"midnight",name:"Midnight",acc:"#F7B924"},{id:"sky",name:"Sky",acc:"#FFB81C"}];
+function setTheme(id,quiet){
+  if(!THEMES.some(t=>t.id===id)) id="royal";
+  $("#frame").dataset.mtheme=id; store.set("mtheme",id);
+  $$("[data-theme-set]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.themeSet===id));
+  if(!quiet) toast("Sample shown in "+THEMES.find(x=>x.id===id).name);
+}
+
+/* ---------- carousel ---------- */
+let cur=0;
+const frames={};
+function probe(src){return new Promise(r=>{const i=new Image();i.onload=()=>r(src);i.onerror=()=>r(null);i.src=src})}
+function renderTabs(){
+  $("#tabs").innerHTML=SAMPLES.map((s,i)=>`<button type="button" role="tab" id="tab-${s.id}" aria-selected="false" data-slide="${i}">${s.name}</button>`).join("");
+}
+function fitFrame(){
+  const v=$("#view"), f=frames[SAMPLES[cur].id]; if(!f) return;
+  const W=v.clientWidth, H=v.clientHeight;
+  const vw=W<700?W:1280; const s=W/vw;
+  if(f.tagName==="IFRAME"){f.style.width=vw+"px";f.style.height=(H/s)+"px";f.style.transform=`scale(${s})`}
+  else{const rep=f.querySelector(".rep"); if(rep){const w=W<700?W:1280;rep.style.width=w+"px";rep.style.transform=`scale(${W/w})`}}
+}
+async function show(i,focusTab){
+  cur=(i+SAMPLES.length)%SAMPLES.length; const s=SAMPLES[cur], v=$("#view");
+  v.classList.remove("live");
+  $$("#tabs [role=tab]").forEach((b,j)=>{b.setAttribute("aria-selected",j===cur);b.tabIndex=j===cur?0:-1});
+  const tab=$("#tab-"+s.id); if(focusTab) tab.focus();
+  const tabs=$("#tabs"); tabs.scrollTo({left:tab.offsetLeft-24,behavior:"smooth"});
+  $("#carCount").textContent=`${cur+1} of ${SAMPLES.length}`;
+  $("#carName").textContent=s.name; $("#carKind").textContent=s.kind;
+  $("#carVisit").href=s.url; $("#carUrl").textContent=new URL(s.url).hostname.replace(/^www\./,"");
+  for(const [k,f] of Object.entries(frames)){ if(k!==s.id&&f.tagName==="IFRAME"){f.remove();delete frames[k]} else f.style.display="none" }
+  $$("#view .shield,#view .done-explore").forEach(e=>e.remove());
+  $("#loading").style.display="grid";
+  if(!frames[s.id]){
+    let el;
+    if(s.embed){
+      el=document.createElement("iframe"); el.title=s.name+" website"; el.loading="lazy"; el.referrerPolicy="no-referrer";
+      el.setAttribute("sandbox","allow-scripts allow-same-origin allow-forms allow-popups");
+      el.addEventListener("load",()=>{if(SAMPLES[cur]===s) $("#loading").style.display="none"});
+      el.src=s.url;
+    }else{
+      el=document.createElement("div"); el.className="poster";
+      const shot=await probe("samples/"+s.id+".jpg");
+      if(shot) el.classList.add("has-shot");
+      el.innerHTML=shot?`<img src="${shot}" alt="${esc(s.name)} home page">`:REPLICA[s.id]?`<div class="rep">${REPLICA[s.id]()}</div>`:`<div class="nopreview">A preview is not available here.<br>Use "Visit the full website" below.</div>`;
+      el.dataset.loaded=1;
+    }
+    frames[s.id]=el; v.appendChild(el);
+    if(SAMPLES[cur]!==s){el.style.display="none";return}
+  }
+  const f=frames[s.id]; f.style.display="block";
+  v.classList.toggle("poster-mode",f.classList.contains("has-shot"));
+  if(f.dataset.loaded||f._loaded) $("#loading").style.display="none";
+  if(f.tagName==="IFRAME") f.addEventListener("load",()=>{f._loaded=true},{once:true});
+  if(f.classList.contains("poster")) $("#loading").style.display="none";
+  const coarse=matchMedia("(pointer:coarse)").matches;
+  const shield=document.createElement("button"); shield.type="button"; shield.className="shield";
+  shield.innerHTML=`<span>${s.embed?(coarse?"Tap to explore this website":"Click to explore this website"):(coarse?"Tap to open the full website":"Click to open the full website")}</span>`;
+  shield.onclick=()=>{ if(!s.embed){window.open(s.url,"_blank","noopener");return} v.classList.add("live"); };
+  v.appendChild(shield);
+  const done=document.createElement("button"); done.type="button"; done.className="btn btn-gold done-explore"; done.textContent="Done exploring";
+  done.onclick=()=>v.classList.remove("live"); v.appendChild(done);
+  fitFrame(); renderAdds();
+}
+function renderAdds(){
+  const s=SAMPLES[cur]; if(!s) return;
+  $("#carAdds").innerHTML=s.features.map(id=>{const f=byId[id],on=selected.has(id);
+    return `<button type="button" aria-pressed="${on}" data-add="${id}"><i>${on?"✓":"+"}</i>${f.short}</button>`}).join("");
+}
+
+function greeting(){const h=new Date().getHours();return h<12?"Good morning":h<18?"Good afternoon":"Good evening"}
+/* ---------- portal demo: reviewee, staff and admin views ---------- */
+const TYPES={
+  exam:{label:"Exam",act:"Take exam",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4h6v3H9z"/><path d="M7 5H5v16h14V5h-2"/><path d="M8.5 13l2 2 4-4"/></svg>'},
+  meet:{label:"Live lecture",act:"Join on Meet",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg>'},
+  f2f:{label:"Face to face",act:"See details",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.6"/></svg>'},
+  rec:{label:"Recording",act:"Watch",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor"/></svg>'},
+  feedback:{label:"Feedback",act:"Answer",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>'},
+  note:{label:"Announcement",act:"Read",icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 10v4h3l6 4V6L7 10z"/><path d="M17 9a4 4 0 0 1 0 6"/></svg>'}
+};
+const BATCHES=["March 2027 LEPT, Tarlac","March 2027 LEPT, Cabanatuan City","Civil Service Review, online","DepEd Ranking Trainings, Mabalacat"];
+/* link: paste a real Google Form, Meet or Drive link later. A docs.google.com/forms link opens inside the pop-up. */
+let POSTS=[
+  {id:1,type:"exam",title:"Mock Exam 1 (sample)",thumb:"Mock exam 1",batch:0,when:"Posted Monday",link:""},
+  {id:2,type:"meet",title:"Live lecture, Saturday 8:00 AM",thumb:"Saturday 8 AM",batch:0,when:"Posted Tuesday",link:""},
+  {id:3,type:"exam",title:"Mock Exam 2 (sample)",thumb:"Mock exam 2",batch:0,when:"Posted Wednesday",link:""},
+  {id:8,type:"f2f",title:"Face-to-face review, Sunday 8:00 AM",thumb:"Sunday, Tarlac office",batch:0,when:"Posted Tuesday",link:"",venue:"Upper Ground Floor, V and S Building, Romulo Blvd., Tarlac City",bring:"Your review book, pen and a valid ID. Scan the QR code at the door for attendance."},
+  {id:4,type:"rec",title:"Recorded session, week 3 (sample)",thumb:"Week 3",batch:0,when:"Posted Wednesday",link:""},
+  {id:5,type:"feedback",title:"Lecture feedback form",thumb:"Rate the lecture",batch:0,when:"Posted Thursday",link:""},
+  {id:6,type:"note",title:"Final coaching schedule is out",thumb:"Final coaching",batch:0,when:"Posted Thursday",link:""},
+  {id:7,type:"exam",title:"Diagnostic test (sample)",thumb:"Diagnostic",batch:2,when:"Posted Monday",link:""}
+];
+const SAMPLE_Q=[
+  {q:"A teacher gives a short test before a new unit to find out what learners already know. What kind of assessment is this?",o:["Summative assessment","Diagnostic assessment","Norm-referenced test","Performance task"]},
+  {q:"What is 3/4 + 1/8?",o:["4/12","7/8","1/2","5/8"]},
+  {q:"In the revised Bloom's taxonomy, which is the highest level of thinking?",o:["Analyzing","Evaluating","Creating","Applying"]}
+];
+const VIEWS={
+  reviewee:{sub:"Reviewee view",url:"chainrinivarts.com/portal",desc:"Reviewees sign in with their Gmail and see only their batch. Every exam, Meet link, face-to-face class, recording and feedback form is a card. They tap an exam, and the Google Form opens right on the page."},
+  staff:{sub:"Staff view",url:"chainrinivarts.com/portal/staff",desc:"Staff, lecturers and trainers post the way they do in Messenger: choose what it is, add a title, pick the batch, paste the link. It shows on the batch page at once, and one tap copies it for the GC."},
+  admin:{sub:"Admin view",url:"chainrinivarts.com/portal/admin",desc:"You decide who gets in. Open or close batches, list the Gmail addresses that may sign in, and assign staff, lecturers and trainers. Scores stay in each Google Form's own sheet, so nothing is centralized unless you want it to be."}
+};
+const PV={view:"reviewee",signed:false,filter:"all",done:new Set(),seen:new Set(POSTS.map(p=>p.id)),next:100,
+  open:[true,true,true,false],
+  emails:["reviewee.one@gmail.com","reviewee.two@gmail.com","reviewee.three@gmail.com"],
+  staff:[["Staff A","Tarlac","Staff"],["Lecturer B","Online and Tarlac","Lecturer"],["Trainer C","Mabalacat","Trainer"],["Arvin Christian De Los Reyes","All branches","Admin"]]};
+const icUser='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>';
+function signinHTML(){return `<div class="signin"><span class="mk-badge"><img src="media/mark.png" alt=""></span><h4>Sign in to the CRETC Portal</h4><p>Use the Gmail you enrolled with. Only enrolled reviewees get in.</p>
+  <button type="button" class="gbtn" data-pv-act="signin">${icUser}Continue with Google</button><small>Sample only. No account is used and nothing is sent.</small></div>`}
+function postCard(p){const T=TYPES[p.type],isNew=!PV.seen.has(p.id),done=PV.done.has(p.id);
+  return `<button type="button" class="post ty-${p.type}" data-post="${p.id}">${done?`<span class="flag done">Submitted</span>`:isNew?`<span class="flag">NEW</span>`:""}
+  <span class="thumb">${T.icon}<small>${T.label}</small><b>${esc(p.thumb||p.title)}</b></span>
+  <span class="pbody"><b>${esc(p.title)}</b><span>${esc(p.when)}</span><em>${done?"View again":T.act}</em></span></button>`}
+function renderReviewee(){
+  const b=$("#pv-reviewee"); if(!PV.signed){b.innerHTML=signinHTML();return}
+  const mine=POSTS.filter(p=>p.batch===0), list=mine.filter(p=>PV.filter==="all"||p.type===PV.filter);
+  const F=[["all","All"],["exam","Exams"],["meet","Live lectures"],["f2f","Face to face"],["rec","Recordings"],["feedback","Feedback"]];
+  b.innerHTML=`<div class="rv-top"><div><h4>${greeting()}, Reviewee</h4><p>Your batch page. New posts appear here first.</p></div><span class="chip">${esc(BATCHES[0])}</span></div>
+  <div class="filters">${F.map(([k,n])=>`<button type="button" data-filter="${k}" aria-pressed="${PV.filter===k}">${n}</button>`).join("")}</div>
+  ${list.length?`<div class="posts">${list.map(postCard).join("")}</div>`:`<p class="empty">Nothing here yet.</p>`}`;
+}
+function renderStaff(){
+  const b=$("#pv-staff"), mine=POSTS.slice(0,6);
+  const dot={exam:"#1D44B8",meet:"#2C5BD6",f2f:"#1E7A46",rec:"#2B3A66",feedback:"#F5B10C",note:"#A9B2C8"};
+  b.innerHTML=`<div class="sgrid"><form class="tile" id="postForm" autocomplete="off" novalidate><h5>Post to a batch</h5><p class="hint" style="margin:-6px 0 12px">For staff, lecturers and trainers.</p>
+    <div class="fld"><span id="tyLab">What are you posting?</span><div class="types" role="radiogroup" aria-labelledby="tyLab">${Object.entries(TYPES).map(([k,t],i)=>`<label><input type="radio" name="ptype" value="${k}" ${i?"":"checked"}><span>${t.label}</span></label>`).join("")}</div></div>
+    <div class="fld"><label for="pTitle">Title</label><input id="pTitle" placeholder="e.g. Mock Exam 3"><div class="err">Add a title.</div></div>
+    <div class="fld"><label for="pBatch">Batch</label><select id="pBatch">${BATCHES.map((x,i)=>`<option value="${i}">${esc(x)}</option>`).join("")}</select></div>
+    <div class="fld"><label for="pLink">Link</label><input id="pLink" inputmode="url" placeholder="Paste the Google Form, Meet or Drive link"></div>
+    <button class="btn btn-gold" type="submit">Post</button>
+    <p class="hint">Exam answers go to the Google Sheet linked to each form, the same as now. After posting, tap Copy to share it in your Messenger GC.</p></form>
+  <div class="tile"><h5>Recent posts</h5><ul class="plist">${mine.map(p=>`<li><i class="dot" style="background:${dot[p.type]}"></i><span>${esc(p.title)}<small>${esc(BATCHES[p.batch])}</small></span><button type="button" class="mini gold" data-copy="${p.id}" aria-label="Copy ${esc(p.title)} for the GC">Copy</button><button type="button" class="mini" data-unpost="${p.id}" aria-label="Remove ${esc(p.title)}">×</button></li>`).join("")}</ul>
+  <p class="hint"><button type="button" class="mini gold" data-view-as="reviewee">See it as a reviewee</button></p></div></div>`;
+}
+function renderAdmin(){
+  const b=$("#pv-admin");
+  b.innerHTML=`<div class="kpis"><div class="kpi"><b>${PV.open.filter(Boolean).length}</b><span>Open batches</span></div><div class="kpi"><b>412</b><span>Reviewees with access</span></div><div class="kpi"><b>${POSTS.length+7}</b><span>Posts this week</span></div><div class="kpi"><b>${PV.staff.length}</b><span>Staff, lecturers, trainers</span></div></div>
+  <div class="agrid"><div class="tile"><h5>Batches</h5><table class="mini-t"><thead><tr><th>Batch</th><th class="n">Reviewees</th><th class="n">Status</th></tr></thead><tbody>${BATCHES.map((x,i)=>`<tr><td>${esc(x)}</td><td class="n">${[126,98,154,34][i]}</td><td class="n"><button type="button" class="tg" data-batch-tg="${i}" aria-pressed="${PV.open[i]}" aria-label="${esc(x)} open"><i></i>${PV.open[i]?"Open":"Closed"}</button></td></tr>`).join("")}</tbody></table></div>
+  <div class="tile"><h5>Who can sign in</h5><span class="chip">${esc(BATCHES[0])}</span><div class="emails">${PV.emails.map((e,i)=>`<span><em>${esc(e)}</em><button type="button" data-rm-email="${i}" aria-label="Remove ${esc(e)}">×</button></span>`).join("")}</div>
+    <form class="addrow" id="emailForm" novalidate><input id="newEmail" type="email" placeholder="Add a Gmail address" aria-label="Gmail address to allow"><button class="mini gold" type="submit">Add</button></form>
+    <p class="hint">Or import the list straight from the enrollment sheet.</p></div></div>
+  <div class="tile roles"><h5>Staff, lecturers and trainers</h5><table class="mini-t"><thead><tr><th>Name</th><th>Branch</th><th class="n">Role</th></tr></thead><tbody>${PV.staff.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td class="n">${r[2]}</td></tr>`).join("")}</tbody></table></div>`;
+}
+function showView(v){
+  PV.view=v;
+  $$("[data-view-as]").forEach(b=>{if(b.closest(".vseg"))b.setAttribute("aria-selected",b.dataset.viewAs===v)});
+  ["reviewee","staff","admin"].forEach(k=>$("#pv-"+k).hidden=k!==v);
+  $("#appSub").textContent=VIEWS[v].sub; $("#appUrl").textContent=VIEWS[v].url; $("#vdesc").textContent=VIEWS[v].desc;
+  ({reviewee:renderReviewee,staff:renderStaff,admin:renderAdmin})[v]();
+}
+let fmFocus=null, fmPost=null;
+function openPost(id){
+  const p=POSTS.find(x=>x.id===id); if(!p) return; PV.seen.add(id);
+  if(p.type==="meet"){toast(p.link?"Opening Google Meet":"Sample only: on the real site this opens the batch's Google Meet");if(p.link)window.open(p.link,"_blank","noopener");renderReviewee();return}
+  if(p.type==="rec"){toast(p.link?"Opening the recording":"Sample only: on the real site this opens the recording in Google Drive");if(p.link)window.open(p.link,"_blank","noopener");renderReviewee();return}
+  if(p.type==="note"){toast(p.title);renderReviewee();return}
+  if(p.type==="f2f"){fmPost=p;fmFocus=document.activeElement;$("#fmTitle").innerHTML=`${esc(p.title)}<small>${esc(BATCHES[p.batch])} · Face-to-face class</small>`;
+    $("#fmBody").innerHTML=`<div class="gf"><div class="gf-card gf-head"><h4>${esc(p.title)}</h4><p><b>Venue:</b> ${esc(p.venue||"Set by the branch")}</p><p><b>Bring:</b> ${esc(p.bring||"As announced by your branch")}</p></div><div class="gf-acts"><button class="btn" type="button" data-fm-close>Back to my batch page</button></div></div>`;
+    $("#fmodal").classList.add("open");document.documentElement.style.overflow="hidden";setTimeout(()=>{const f=$("#fmodal .x");f&&f.focus()},60);renderReviewee();return}
+  fmPost=p; fmFocus=document.activeElement;
+  $("#fmTitle").innerHTML=`${esc(p.title)}<small>${esc(BATCHES[p.batch])} · Google Form</small>`;
+  const real=/docs\.google\.com\/forms/.test(p.link);
+  $("#fmBody").innerHTML=real?`<iframe src="${esc(p.link.replace(/\/viewform.*$/,"/viewform"))}?embedded=true" title="${esc(p.title)}"></iframe>`:sampleForm(p);
+  $("#fmodal").classList.add("open"); document.documentElement.style.overflow="hidden";
+  setTimeout(()=>{const f=$("#fmodal .x");f&&f.focus()},60); renderReviewee();
+}
+function sampleForm(p){
+  const fb=p.type==="feedback";
+  const qs=fb?[{q:"How clear was today's lecture?",o:["Very clear","Clear","A little confusing","Confusing"]},{q:"How was the pacing?",o:["Too fast","Just right","Too slow"]}]:SAMPLE_Q;
+  return `<form class="gf" id="gform" novalidate>
+  <div class="gf-card gf-head"><h4>${esc(p.title)}</h4><p>${fb?"Your answers help us improve the next session.":"Sample questions written for this demo. On the real site, CRETC's own Google Form loads here."}</p><div class="acct">Signed in as reviewee@gmail.com</div></div>
+  ${qs.map((q,i)=>`<div class="gf-card gf-q"><p>${i+1}. ${esc(q.q)} <span class="req">*</span></p>${q.o.map((o,j)=>`<label><input type="radio" name="gq${i}" value="${j}">${esc(o)}</label>`).join("")}</div>`).join("")}
+  <div class="gf-acts"><button class="btn" type="submit">Submit</button><small id="gfMsg"></small></div>
+  <p class="gf-note">Responses go to the Google Sheet linked to this form.</p></form>`;
+}
+function closeForm(){if(!$("#fmodal").classList.contains("open"))return;$("#fmodal").classList.remove("open");document.documentElement.style.overflow="";if(fmFocus)fmFocus.focus({preventScroll:true})}
+function submitForm(){
+  const n=$$("#gform .gf-q").length, answered=$$("#gform .gf-q").filter(q=>q.querySelector("input:checked")).length;
+  if(answered<n){$("#gfMsg").textContent=`Please answer all ${n} questions.`;return}
+  PV.done.add(fmPost.id);
+  $("#fmBody").innerHTML=`<div class="gf"><div class="gf-card gf-head gf-done"><h4>${esc(fmPost.title)}</h4><p>Your response has been recorded.</p><p>${fmPost.type==="exam"?"Your score is released through Google Forms when your lecturer opens the results.":"Thank you for your feedback."}</p></div>
+  <div class="gf-acts"><button class="btn" type="button" data-fm-close>Back to my batch page</button></div></div>`;
+  renderReviewee(); $("#fmBody .btn").focus();
+}
+function staffPost(e){
+  e.preventDefault();
+  const t=$("#pTitle").value.trim(), type=$("input[name=ptype]:checked").value, batch=+$("#pBatch").value, link=$("#pLink").value.trim();
+  $("#pTitle").closest(".fld").classList.toggle("bad",!t); if(!t){$("#pTitle").focus();return}
+  POSTS.unshift({id:PV.next++,type,title:t,thumb:t,batch,when:"Posted just now",link});
+  toast(`Posted to ${BATCHES[batch]}`); renderStaff(); $("#pTitle").focus();
+}
+function pvAct(a){if(a==="signin"){PV.signed=true;toast("Signed in as a sample reviewee");renderReviewee()}}
+
+/* ---------- website assistant (sample) ---------- */
+function addMsg(h,w){const m=document.createElement("div");m.className="msg "+w;m.innerHTML=h;const box=$("#msgs");box.appendChild(m);box.scrollTop=box.scrollHeight;return m}
+function answer(q){
+  const s=q.toLowerCase(); let best=null,score=0;
+  const hit=k=>k.length<=3?new RegExp("\\b"+k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"\\b").test(s):s.includes(k);
+  KB.forEach(e=>{let n=0;e.k.forEach(k=>{if(hit(k))n+=(k.length>5?2:1)*(e.w||1)});if(n>score){score=n;best=e}});
+  return best?best.a:"I don't have that information yet. The real assistant learns only from what CRETC approves. For now, ask me about our reviews, branches or how to enroll.";
+}
+function ask(q){q=q.trim();if(!q)return;addMsg(esc(q),"me");const t=addMsg("<i></i><i></i><i></i>","bot typing");setTimeout(()=>{t.remove();addMsg(answer(q),"bot")},600+Math.random()*400)}
+let chatFocus=null;
+function openChat(){chatFocus=document.activeElement;$("#cpanel").classList.add("open");setTimeout(()=>$("#askInput").focus({preventScroll:true}),60)}
+function closeChat(){if(!$("#cpanel").classList.contains("open"))return;$("#cpanel").classList.remove("open");if(chatFocus&&document.activeElement&&$("#cpanel").contains(document.activeElement))chatFocus.focus({preventScroll:true})}
+
+/* ---------- print ---------- */
+function buildQuote(){
+  const P=price(selected), down=r2(P.total*CONFIG.downPct/100); let n=1;
+  const rows=[];
+  if(P.tier) rows.push(`<tr><td></td><td><b>${P.tier.name} package</b></td><td class="n"><b>${peso(P.tier.price)}</b></td></tr>`);
+  rows.push(`<tr><td>${n++}</td><td><b>${byId.base.name}</b><br>${byId.base.desc}</td><td class="n">${P.tier?"included":peso(byId.base.price)}</td></tr>`);
+  (P.tier?P.tier.items:[]).forEach(id=>rows.push(`<tr><td>${n++}</td><td><b>${byId[id].name}</b><br>${byId[id].desc}</td><td class="n">included</td></tr>`));
+  P.extras.forEach(id=>rows.push(`<tr><td>${n++}</td><td><b>${byId[id].name}</b>${P.tier?" (added)":""}<br>${byId[id].desc}</td><td class="n">${peso(byId[id].price)}</td></tr>`));
+  if(selected.has("maint")) rows.push(`<tr><td>${n++}</td><td><b>Optional monthly maintenance</b><br>${byId.maint.desc}</td><td class="n">${peso(byId.maint.price)} / month</td></tr>`);
+  $("#printArea").innerHTML=`
+  <div class="pq-head"><div><h1>Website and Portal Quotation</h1><p>${esc(CONFIG.developer)}, ${esc(CONFIG.role)}<br>${esc(CONFIG.email)}${CONFIG.phone?" | "+esc(CONFIG.phone):""}</p></div>
+  <div style="text-align:right"><p><b>${CONFIG.quoteNo}</b><br>Issued ${fmtDate(issued)}<br>Valid until ${fmtDate(validUntil)}</p></div></div>
+  <div class="pq-grid"><div><b>Prepared for</b>${esc(CONFIG.client)}<br>${esc(CONFIG.clientRole)}, ${esc(CONFIG.org)}<br>${esc(CONFIG.orgEmail)} | ${esc(CONFIG.orgPhone)}</div><div><b>Project</b>Website and reviewee portal for CRETC on ${CONFIG.domain}: responsive design, secure hosting, ${CONFIG.warrantyMonths} months of free repairs</div></div>
+  <table class="pq"><thead><tr><th>#</th><th>Item</th><th style="text-align:right">Amount</th></tr></thead><tbody>${rows.join("")}
+  ${P.save?`<tr class="sum first"><td></td><td>Items at regular prices</td><td class="n">${peso(P.list)}</td></tr><tr class="sum"><td></td><td>Package saving</td><td class="n">−${peso(P.save)}</td></tr>`:""}
+  <tr class="sum ${P.save?"":"first"}"><td></td><td><b>Total</b></td><td class="n"><b>${peso(P.total)}</b></td></tr>
+  <tr class="sum"><td></td><td>Down payment (${CONFIG.downPct}%) upon approval</td><td class="n">${peso(down)}</td></tr>
+  <tr class="sum"><td></td><td>Balance upon launch</td><td class="n">${peso(r2(P.total-down))}</td></tr></tbody></table>
+  <div class="pq-terms"><b>Terms</b><ul>
+  <li>${CONFIG.warrantyMonths} months of free repairs from launch: anything on the website or portal that breaks or stops working is fixed at no cost.</li>
+  <li>New content and changes after launch are covered only if optional maintenance is chosen.</li>
+  <li>Estimated build time: about ${weeks(P.days)} weeks after complete content is received. Two rounds of revisions per page.</li>
+  <li>Includes registration of ${CONFIG.domain}, connected to the website. Renewal after the registration period is billed at cost.</li>
+  <li>Exams, files and scores stay in CRETC's own Google Forms, Drive and Sheets. CRETC keeps ownership of all modules, exam items and reviewee records. A privacy notice and consent under RA 10173 are built in.</li>
+  <li>Not included: paid ads, professional photo or video shoots, and paid plans of outside tools. These are paid at cost.</li>
+  <li>CRETC provides the logo, photos, program details and branch information. New features requested after approval are quoted separately.</li>
+  <li>All website files are handed over to CRETC upon full payment.</li></ul></div>
+  <div class="pq-sign"><div>${esc(CONFIG.developer)}<br>Prepared by</div><div>${esc(CONFIG.clientName)}<br>Conforme, ${esc(CONFIG.clientRole)}, ${esc(CONFIG.org)}</div></div>`;
+}
+
+/* ---------- intro ---------- */
+function showIntro(){
+  const el=$("#intro"); el.style.display="flex"; requestAnimationFrame(()=>el.classList.remove("gone"));
+  document.documentElement.style.overflow="hidden";
+  setTimeout(()=>{const b=el.querySelector(".acts .btn");b&&b.focus({preventScroll:true})},2800);
+}
+function hideIntro(){
+  const el=$("#intro"); el.classList.add("gone"); document.documentElement.style.overflow=""; store.set("introSeen",1);
+  $("#hero").classList.add("in"); setTimeout(()=>{el.style.display="none"},850); playVid();
+}
+
+/* ---------- hero video ---------- */
+let vidUserPaused=false;
+function setVidBtn(playing){$("#vidBtn").setAttribute("aria-label",playing?"Pause video":"Play video");$("#vidBtn").innerHTML=playing?'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>':'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>'}
+function playVid(){const v=$("#heroVid");if(reduced()||vidUserPaused){setVidBtn(false);return}const p=v.play();if(p&&p.catch)p.catch(()=>setVidBtn(false));setVidBtn(true)}
+
+/* ---------- scroll ---------- */
+const SECTIONS=["design","portal","work","menu","quote"].map(id=>document.getElementById(id));
+function onScroll(){
+  const max=document.documentElement.scrollHeight-innerHeight;
+  $("#progress").style.transform=`scaleX(${max>0?scrollY/max:0})`;
+  const mid=innerHeight*.4; let now=null;
+  SECTIONS.forEach(s=>{const r=s.getBoundingClientRect();if(r.top<mid&&r.bottom>mid)now=s.id});
+  $$(".top nav a").forEach(a=>a.classList.toggle("now",a.getAttribute("href")==="#"+now));
+  const menuTop=$("#menu").getBoundingClientRect().top, tk=$("#quote").getBoundingClientRect();
+  $("#pill").classList.toggle("show",menuTop<innerHeight*.5 && tk.top>innerHeight*.6);
+}
+
+/* ---------- init ---------- */
+const REPLICA={};
+function init(){
+  $("#reach").innerHTML=`Questions, or ready to proceed? Reach me: <b>${esc(CONFIG.developer)}</b>, <a href="mailto:${CONFIG.email}">${CONFIG.email}</a>, or send me a personal message on Facebook Messenger.`;
+  $$("[data-greeting]").forEach(e=>e.textContent=greeting());
+  $$("[data-qno]").forEach(e=>e.textContent=CONFIG.quoteNo);
+  $$("[data-valid]").forEach(e=>e.textContent=fmtDate(validUntil));
+  $$("[data-devname]").forEach(e=>e.textContent=CONFIG.developer);
+  $$("[data-devcontact]").forEach(e=>e.textContent=[CONFIG.role,CONFIG.email,CONFIG.phone].filter(Boolean).join(" | "));
+  $("#themePick").innerHTML='<span>Colors</span>'+THEMES.map(t=>`<button type="button" data-theme-set="${t.id}" aria-pressed="false" style="--sw:${t.acc}"><i class="sw-${t.id}"></i><b>${t.name}</b></button>`).join("");
+  setTheme(store.get("mtheme")||"royal",true);
+  const rib=["LEPT Review","PNLE Review","Civil Service Review","DepEd Ranking Trainings","Tarlac City","Cabanatuan City","Maria Aurora","Iba","Mabalacat","Quality is our priority"];
+  const one=rib.map(x=>`<span>${x}</span><i>&#9670;</i>`).join(""); $("#ribbon").innerHTML=one+one;
+  renderMenu(); renderDrawer(); renderTabs();
+  const sharedLink=/q=/.test(location.hash);
+  selected=load(); sync(); buildQuote();
+  showView("reviewee");
+  addMsg("Hello! I'm the Alagang Chain assistant, a sample of what CRETC's website can include. Ask me about reviews, branches or enrolling.","bot");
+  $("#chips").innerHTML=CHIPS.map(c=>`<button type="button" data-chip>${c}</button>`).join("");
+  setupStage();
+  if(store.get("notes")===false){$("#notesBtn").setAttribute("aria-pressed","false");$("#mk").classList.add("no-notes")}
+  if(!store.get("introSeen")&&!sharedLink) showIntro(); else {$("#intro").style.display="none";$("#hero").classList.add("in");playVid()}
+  const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();show(0)}},{rootMargin:"600px"});
+  io.observe($("#work"));
+  new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting)closeChat()})},{threshold:0}).observe($("#design"));
+  new IntersectionObserver(es=>{const v=$("#heroVid");es.forEach(e=>{if(e.isIntersecting)playVid();else v.pause()})}).observe($("#hero"));
+
+  document.addEventListener("change",e=>{
+    const id=e.target.dataset&&e.target.dataset.f; if(id){const m=toggleFeature(id,e.target.checked);if(/ with /.test(m))toast(m)}});
+  document.addEventListener("click",e=>{
+    const pin=e.target.closest(".pin");
+    if(pin){const o=!pin.classList.contains("open");$$(".pin.open").forEach(p=>p.classList.remove("open"));pin.classList.toggle("open",o);return}
+    if(e.target.closest("#mkChat")){openChat();return}
+    if(e.target.closest("[data-chat-close]")){closeChat();return}
+    if(e.target.closest("[data-fm-close]")){closeForm();return}
+    if(e.target.closest("[data-goto-portal]")){showView("reviewee");$("#portal").scrollIntoView({behavior:reduced()?"auto":"smooth"});return}
+    const mp=e.target.closest("[data-mpage]");
+    if(mp){showMockPage(mp.dataset.mpage,!!mp.closest(".mk"));return}
+    if(e.target.closest("#notesBtn")){const on=$("#notesBtn").getAttribute("aria-pressed")!=="true";$("#notesBtn").setAttribute("aria-pressed",on);$("#mk").classList.toggle("no-notes",!on);store.set("notes",on);return}
+    if(e.target.closest("#vidBtn")){const v=$("#heroVid");if(v.paused){vidUserPaused=false;v.play().catch(()=>{});setVidBtn(true)}else{vidUserPaused=true;v.pause();setVidBtn(false)}return}
+    const t=e.target.closest("[data-theme-set],[data-begin],[data-choose],[data-view],[data-chip],[data-slide],[data-step],[data-add],[data-view-as],[data-pv-act],[data-post],[data-filter],[data-copy],[data-unpost],[data-batch-tg],[data-rm-email],[data-open-drawer],[data-close-drawer]");
+    if(!t) return;
+    const d=t.dataset;
+    if(d.themeSet) setTheme(d.themeSet);
+    else if("begin" in d) hideIntro();
+    else if(d.choose){const keep=["maint"].filter(id=>selected.has(id));selected=new Set([...tierById[d.choose].items,...keep]);lastAdded="tier";sync();toast(tierById[d.choose].name+" package chosen")}
+    else if(d.view){$$("[data-view]").forEach(b=>b.setAttribute("aria-pressed",b===t));$("#frame").classList.toggle("phone",d.view==="phone")}
+    else if("chip" in d) ask(t.textContent);
+    else if(d.slide) show(+d.slide);
+    else if(d.step) show(cur+(+d.step));
+    else if(d.add){const m=toggleFeature(d.add,!selected.has(d.add));toast(m)}
+    else if(d.viewAs) showView(d.viewAs);
+    else if(d.pvAct) pvAct(d.pvAct);
+    else if(d.post) openPost(+d.post);
+    else if(d.filter){PV.filter=d.filter;renderReviewee()}
+    else if(d.copy){const q=POSTS.find(x=>x.id===+d.copy);const msg=`New on the CRETC Portal: ${q.title}. Open it at chainrinivarts.com/portal`;try{navigator.clipboard.writeText(msg).catch(()=>{})}catch(err){}toast("Copied for your GC")}
+    else if(d.unpost){POSTS=POSTS.filter(x=>x.id!==+d.unpost);renderStaff();toast("Post removed")}
+    else if(d.batchTg){const i=+d.batchTg;PV.open[i]=!PV.open[i];renderAdmin();toast(`${BATCHES[i]} is now ${PV.open[i]?"open":"closed"}`)}
+    else if(d.rmEmail){PV.emails.splice(+d.rmEmail,1);renderAdmin()}
+    else if("openDrawer" in d) openDrawer();
+    else if("closeDrawer" in d) closeDrawer();
+  });
+  $("#tabs").addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();show(cur+1,true)}if(e.key==="ArrowLeft"){e.preventDefault();show(cur-1,true)}});
+  let sx=null; $("#view").addEventListener("pointerdown",e=>{if(!$("#view").classList.contains("live"))sx=e.clientX});
+  $("#view").addEventListener("pointerup",e=>{if(sx!==null&&Math.abs(e.clientX-sx)>60){show(cur+(e.clientX<sx?1:-1))}sx=null});
+  $("#view").addEventListener("mouseleave",()=>$("#view").classList.remove("live"));
+  $("#askForm").addEventListener("submit",e=>{e.preventDefault();ask($("#askInput").value);$("#askInput").value=""});
+  document.addEventListener("submit",e=>{
+    if(e.target.id==="postForm") staffPost(e);
+    else if(e.target.id==="gform"){e.preventDefault();submitForm()}
+    else if(e.target.id==="emailForm"){e.preventDefault();const v=$("#newEmail").value.trim();if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){toast("Enter a valid email address");return}PV.emails.push(v);renderAdmin();toast(v+" can now sign in");$("#newEmail").focus()}
+  });
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"){if($("#fmodal").classList.contains("open"))closeForm();else if($("#drawer").classList.contains("open"))closeDrawer();else if($("#cpanel").classList.contains("open"))closeChat();else if($("#intro").style.display!=="none")hideIntro();else $("#view").classList.remove("live")}});
+  $("#btnPrint").onclick=()=>{buildQuote();window.print()};
+  addEventListener("beforeprint",buildQuote);
+  $("#termsBtn").onclick=()=>{const o=$("#terms").classList.toggle("open");$("#termsBtn").setAttribute("aria-expanded",o);$("#termsBtn").textContent=o?"Hide the full terms":"Read the full terms"};
+  $("#replay").onclick=()=>{scrollTo({top:0,behavior:"auto"});showIntro()};
+  let raf=0; addEventListener("scroll",()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;onScroll()})},{passive:true});
+  addEventListener("resize",()=>{fitFrame();onScroll()}); onScroll();
+}
+function showMockPage(id,fromInside){
+  mpage=id;
+  $$(".mk-page").forEach(p=>p.hidden=p.dataset.page!==id);
+  $$(".seg [data-mpage]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.mpage===id));
+  $$(".pin.open").forEach(p=>p.classList.remove("open"));
+  renderMock();
+  const w=$(".mk-wrap"); if(w) w.scrollTop=0;
+  const top=$("#frame").getBoundingClientRect().top;
+  if(fromInside||top<0) $("#frame").scrollIntoView({block:"start",behavior:reduced()?"auto":"smooth"});
+}
+function setupStage(){
+  const wrap=$("#stageWrap"), c=$("#hstage"), hero=$("#hero");
+  const fit=()=>{const k=Math.min(1,wrap.clientWidth/560);c.style.transform=`scale(${k})`;c.style.marginBottom=(500*k-500)+"px"};
+  fit(); addEventListener("resize",fit);
+  const still=reduced()||matchMedia("(pointer:coarse)").matches;
+  if(!still){let raf=0;hero.addEventListener("pointermove",e=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;const r=hero.getBoundingClientRect();
+    c.style.setProperty("--mx",((e.clientX-r.left)/r.width-.5).toFixed(3));c.style.setProperty("--my",((e.clientY-r.top)/r.height-.5).toFixed(3))})});
+    hero.addEventListener("pointerleave",()=>{c.style.setProperty("--mx",0);c.style.setProperty("--my",0)})}
+  const front=el=>{$$(".card.tap").forEach(x=>x.classList.toggle("front",x===el&&!x.classList.contains("front")))};
+  $$(".card.tap").forEach(el=>{el.addEventListener("click",()=>front(el));el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();front(el)}})});
+}
+let drawerFocus=null;
+function openDrawer(){drawerFocus=document.activeElement;$("#drawer").classList.add("open");document.documentElement.style.overflow="hidden";setTimeout(()=>$("#drawer .x").focus(),50)}
+function closeDrawer(){$("#drawer").classList.remove("open");document.documentElement.style.overflow="";if(drawerFocus)drawerFocus.focus({preventScroll:true})}
+</script>
+<script>
+/* Drawn previews, used only for sites that cannot be shown live (and have no screenshot in samples/). */
+(function(){
+const blocks=(n,c1,c2)=>Array.from({length:n},(_,i)=>`<div class="r-img" style="background:linear-gradient(135deg,${i%2?c1:c2},${i%2?c2:c1})"></div>`).join("");
+REPLICA.coed=()=>`
+<div class="r-bar" style="background:#fff;border-bottom:4px solid #7B1113"><div class="r-logo" style="background:radial-gradient(circle,#F2C230 35%,#7B1113 36%)"></div><div><b style="font-size:17px;color:#7B1113">College of Education</b><div style="font-size:12px;color:#555">Tarlac State University</div></div>
+<div class="r-nav" style="color:#333"><span>Home</span><span>About</span><span>Department</span><span>Faculty</span><span>College News, Events and Activities</span><span>Downloads</span></div></div>
+<div style="position:relative;height:420px;background:linear-gradient(120deg,#5A0D0F,#9B1C1F 55%,#C9A227)"><div style="position:absolute;left:40px;bottom:40px;color:#fff;max-width:640px"><div style="font-size:14px;letter-spacing:.08em;opacity:.85">ANNOUNCEMENT</div><div style="font-family:Georgia,serif;font-size:44px;font-weight:700;line-height:1.1;margin-top:8px">Celebrating our latest achievers</div><div style="display:flex;gap:8px;margin-top:22px"><i style="width:28px;height:4px;background:#fff"></i><i style="width:28px;height:4px;background:rgba(255,255,255,.4)"></i><i style="width:28px;height:4px;background:rgba(255,255,255,.4)"></i><i style="width:28px;height:4px;background:rgba(255,255,255,.4)"></i></div></div></div>
+<div class="r-sec"><h2 style="color:#7B1113">College News</h2><div class="r-grid r-g4">${[["30 August 2024","CCS Meet and Greet 2024"],["10 August 2024","Freshmen Orientation"],["4 August 2024","TSU welcomes frosh in festive ALPAS 2024"],["4 August 2024","TSU Chorale clinches two golds in Taipei"]].map(n=>`<div><div class="r-img" style="background:linear-gradient(135deg,#d9c9b0,#8d6e63)"></div><div style="font-size:12px;color:#777;margin-top:10px">${n[0]}</div><b style="display:block;margin-top:4px;font-size:16px">${n[1]}</b><div style="color:#7B1113;font-size:13px;font-weight:700;margin-top:6px">Read More</div></div>`).join("")}</div></div>
+<div class="r-sec" style="background:#F6F2EC"><h2 style="color:#7B1113">Specialization Programs</h2><div class="r-grid r-g3">${["Bachelor of Elementary Education","Bachelor of Early Childhood Education","Bachelor of Technical-Vocational Teacher Education","Bachelor of Secondary Education","Bachelor of Physical Education","Graduate Programs"].map(p=>`<div class="r-card" style="background:#fff;border-top:4px solid #C9A227"><b>${p}</b>Program overview, curriculum and accreditation.</div>`).join("")}</div></div>
+<div class="r-sec"><h2 style="color:#7B1113">Faculty</h2><div class="r-grid r-g5">${Array.from({length:5},()=>`<div style="text-align:center"><div style="width:96px;height:96px;border-radius:50%;margin:0 auto;background:#ddd"></div><div style="height:10px;background:#e5e5e5;margin:12px auto 0;width:70%;border-radius:4px"></div><div style="height:8px;background:#eee;margin:6px auto 0;width:50%;border-radius:4px"></div></div>`).join("")}</div></div>
+<div class="r-foot r-grid r-g3" style="background:#3B0A0B;color:#eee"><div><b style="color:#F2C230">Contact Details</b><br>Ground Floor, NSTP Building<br>TSU Lucinda Campus, Tarlac City</div><div><b style="color:#F2C230">Office Hours</b><br>Monday to Thursday<br>7:00 AM to 6:00 PM</div><div><b style="color:#F2C230">Quick Links</b><br>Home<br>Downloads</div></div>`;
+
+REPLICA.inakay=()=>`
+<div class="r-bar" style="background:#163659;color:#fff"><div class="r-logo" style="background:#E5C19B"></div><b style="font-family:Georgia,serif;font-size:18px">Ina-Inakay Center Inc.</b><div class="r-nav" style="color:#cfd8e3"><span>Home</span><span>About</span><span>Our Work</span><span>Get Involved</span><span>News</span><span>AI Assistant</span><span>Reach Us</span></div></div>
+<div class="r-hero" style="background:linear-gradient(90deg,#163659 45%,rgba(22,54,89,.4)),linear-gradient(135deg,#8a6a4a,#C85731);min-height:440px"><div style="font-size:13px;color:#E5C19B;margin-bottom:12px">Quezon City, Philippines</div><h1>Crafting Pathways.<br><i style="color:#E5C19B">Restoring Lives.</i></h1><p>We restore families torn apart by incarceration through faith, education, livelihood, and the belief that every person deserves a way back home.</p><span class="r-btn" style="background:#C85731">Get Involved</span><span class="r-btn" style="box-shadow:inset 0 0 0 1.5px #fff">Our Story</span></div>
+<div class="r-sec" style="background:#F5EDE0"><h2 style="color:#163659">Moments That <i style="color:#C85731">Matter</i></h2><div class="r-grid r-g4">${blocks(4,"#b98d63","#6f8a6a")}</div></div>
+<div class="r-sec"><h2 style="color:#163659">See It For <i style="color:#C85731">Yourself</i></h2><div class="r-grid r-g2">${[0,1].map(()=>`<div class="r-img" style="min-height:230px;background:#1d2b38;display:grid;place-items:center"><div style="width:64px;height:64px;border-radius:50%;background:#C85731;display:grid;place-items:center;color:#fff;font-size:24px">▶</div></div>`).join("")}</div></div>
+<div class="r-sec r-grid r-g2" style="background:#F5EDE0;align-items:start"><div><h2 style="color:#163659">Fresh From Our <i style="color:#C85731">Facebook Page</i></h2><p style="color:#555">Our newest stories, photos and announcements, posted straight from the field.</p></div><div class="r-card" style="background:#fff;min-height:260px"><b style="color:#1877F2">Ina-Inakay Center Inc.</b><div class="r-img" style="background:#e9e2d6;margin-top:10px"></div></div></div>
+<div class="r-sec r-grid r-g3" style="background:#163659;color:#fff;text-align:center"><div class="r-stat"><b style="color:#E5C19B">600+</b>Families Served</div><div class="r-stat"><b style="color:#E5C19B">7+</b>Communities</div><div class="r-stat"><b style="color:#E5C19B">8.8 ha</b>Farm Land Area</div></div>
+<div class="r-sec"><h2 style="color:#163659">Five Programs <i style="color:#C85731">In Action</i></h2><div class="r-grid r-g5">${["The Farm","Operation School Assist","Water & Community Pantry","Relief Operations","Ground of Hope"].map(p=>`<div class="r-card" style="background:#F5EDE0"><div class="r-img" style="min-height:90px;background:linear-gradient(135deg,#c9a27d,#7c9a6e);margin-bottom:10px"></div><b style="color:#163659">${p}</b></div>`).join("")}</div></div>
+<div class="r-sec" style="background:#F5EDE0"><h2 style="color:#163659">How It Began</h2><div class="r-grid r-g5">${["2005","2006","2008","2018","2025"].map(y=>`<div style="border-top:3px solid #C85731;padding-top:10px"><b style="font-family:Georgia,serif;font-size:24px;color:#163659">${y}</b></div>`).join("")}</div></div>
+<div class="r-sec"><h2 style="color:#163659">How You <i style="color:#C85731">Can Help</i></h2><div class="r-grid r-g3">${["Volunteer","Donate","Partner With Us"].map(p=>`<div class="r-card" style="background:#fff;box-shadow:0 0 0 1px #e3d8c8"><b style="color:#163659">${p}</b>Every form of involvement moves the mission forward.</div>`).join("")}</div></div>
+<div class="r-sec" style="background:#163659;color:#fff"><h2>Ask. Get Answers. <i style="color:#E5C19B">Connect.</i></h2><div class="r-grid r-g3">${["Ask Inakay","Volunteer Hub","Partner Desk"].map(p=>`<div class="r-card" style="background:rgba(255,255,255,.08)"><b style="color:#E5C19B">${p}</b>Available around the clock.</div>`).join("")}</div></div>
+<div class="r-foot" style="background:#0f2540;color:#cfd8e3">© Ina-Inakay Center Inc. Quezon City and San Jose, Tarlac</div>`;
+
+REPLICA.mvcs=()=>`
+<div class="r-bar" style="background:#fff;box-shadow:0 1px 0 #ddd"><div class="r-logo" style="background:radial-gradient(circle,#fff 30%,#1F4E8C 31%)"></div><b style="font-size:16px;color:#1F4E8C">MVCS of San Jose Inc.</b><div class="r-nav" style="color:#333"><span>Home</span><span>Portals</span><span>Academics</span><span>Administration &amp; Faculty</span><span>Admissions</span><span>AI Assistance</span></div></div>
+<div class="r-hero" style="background:linear-gradient(0deg,rgba(15,35,70,.8),rgba(15,35,70,.35)),linear-gradient(135deg,#5d8fbf,#2d5a3d);text-align:center;min-height:420px;display:flex;flex-direction:column;justify-content:center;align-items:center"><h1 style="font-family:Arial,sans-serif">Discover the advantage, Experience the difference.</h1><p style="font-size:22px;font-weight:700">Mountain View Christian School of San Jose Inc.</p><p>A Christ-Centered School</p></div>
+<div class="r-sec r-grid r-g3">${[["Enroll Now","Ready to experience the difference?"],["Learn More","Discover the advantages."],["Affiliated Church","Mountain View Independent Baptist Church"]].map(c=>`<div><div class="r-img" style="min-height:180px;background:linear-gradient(135deg,#9fb8d6,#6d8f6a)"></div><b style="display:block;font-size:20px;color:#1F4E8C;margin-top:12px">${c[0]}</b><span style="color:#555;font-size:14px">${c[1]}</span></div>`).join("")}</div>
+<div class="r-sec r-grid r-g2" style="background:#F1F5FA"><div class="r-card" style="background:#fff"><b>Recognition</b>Government Recognized (Pre-Elementary, Elementary Grades I to VI)</div><div class="r-card" style="background:#fff"><b>Affiliation</b>Alliance of Private Schools in Tarlac Province, Inc.</div></div>
+<div class="r-sec"><h2 style="text-align:center;font-family:Arial,sans-serif;color:#1F4E8C">ABOUT US</h2><div class="r-grid r-g2">${["Our Vision","Our Mission","Our Philosophy","Goals of the Course"].map(t=>`<div class="r-grid" style="grid-template-columns:140px 1fr;align-items:center"><div class="r-img" style="min-height:110px;background:linear-gradient(135deg,#c7d6e8,#8aa9c9)"></div><div><b style="font-size:18px;color:#1F4E8C">${t}</b><div style="height:8px;background:#e6e9ee;border-radius:4px;margin-top:10px"></div><div style="height:8px;background:#e6e9ee;border-radius:4px;margin-top:6px;width:80%"></div></div></div>`).join("")}</div></div>
+<div class="r-sec" style="background:#F1F5FA"><h2 style="text-align:center;font-family:Arial,sans-serif;color:#1F4E8C">Portals</h2><div class="r-grid r-g4">${["For Faculty","For Registrar","For Administration","Downloads Center"].map(p=>`<div class="r-card" style="background:#fff;text-align:center"><b style="color:#1F4E8C">${p}</b></div>`).join("")}</div></div>
+<div class="r-sec"><h2 style="text-align:center;font-family:Arial,sans-serif;color:#1F4E8C">Meet Our Faithful AI Companions</h2><div class="r-grid r-g3">${[["Solomon","Calm, insightful and thoughtful"],["Deborah","Bold, uplifting and empowering"],["Barnabas","Warm, approachable and supportive"]].map(a=>`<div class="r-card" style="background:#1F4E8C;color:#fff;text-align:center"><div style="width:70px;height:70px;border-radius:50%;background:#F2C230;margin:0 auto 10px"></div><b>${a[0]}</b>${a[1]}</div>`).join("")}</div></div>
+<div class="r-foot" style="background:#14325C;color:#dfe7f2">Mountain View Christian School of San Jose Inc.<br>Purok 2, Burgos, San Jose, Tarlac</div>`;
+
+REPLICA.records=()=>`
+<div class="r-side" style="background:#F3F6FA;font-family:Arial,sans-serif">
+<aside style="background:#fff;border-right:1px solid #DDE4ED;padding:24px 20px"><div style="display:flex;gap:8px"><div class="r-logo" style="background:#7B1113"></div><div class="r-logo" style="background:#12467F"></div></div>
+<div style="font-family:Impact,'Arial Narrow',sans-serif;font-size:26px;color:#12467F;line-height:1.05;margin-top:16px">INSTITUTIONAL RECORDS AND EVIDENCE PORTAL</div><div style="font-size:12px;color:#6A7C93;margin-top:6px">College of Education</div>
+<div style="font-size:11px;color:#6A7C93;margin:22px 0 8px">Areas</div>${["Curriculum","Administration","Faculty","Library","Physical Facilities","Laboratories","Graduate Programs"].map((a,i)=>`<div style="display:flex;gap:10px;align-items:center;padding:9px 8px;border-radius:4px;${i?"":"background:#EAF1FA"}"><span style="font-family:Impact,sans-serif;color:#1E6FC4;font-size:20px;width:22px">${i+1}</span><b style="font-size:14px;color:#0A2547">${a}</b></div>`).join("")}
+<div style="font-size:11px;color:#6A7C93;margin:20px 0 8px">Reference</div><div style="padding:8px;font-size:14px;color:#0A2547"><b>Evaluation Instruments</b></div><div style="padding:8px;font-size:14px;color:#0A2547"><b>Records Summary</b></div></aside>
+<div><div style="background:linear-gradient(110deg,#0A2547,#12467F 60%,#1E6FC4);color:#fff;padding:44px 36px"><div style="font-family:Impact,'Arial Narrow',sans-serif;font-size:42px;letter-spacing:.01em">INSTITUTIONAL RECORDS AND EVIDENCE PORTAL</div><div style="font-size:13px;opacity:.8;margin-top:6px">Tarlac State University, College of Education</div></div>
+<div style="padding:16px 36px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #DDE4ED;background:#fff"><span style="font-size:13px;color:#6A7C93">Home</span><span style="border:1px solid #DDE4ED;border-radius:20px;padding:9px 16px;width:260px;color:#9AA8B8;font-size:14px">Search all records</span></div>
+<div style="padding:30px 36px" class="r-grid r-g2">${["Curriculum","Administration","Faculty","Library","Physical Facilities","Laboratories","Graduate Programs","Evaluation Instruments"].map((a,i)=>`<div style="background:#fff;border:1px solid #DDE4ED;border-left:4px solid ${i%2?"#1E6FC4":"#BE9A34"};border-radius:6px;padding:18px"><span style="font-family:Impact,sans-serif;color:#1E6FC4;font-size:28px">${String(i+1).padStart(2,"0")}</span><b style="display:block;color:#0A2547;font-size:17px;margin-top:4px">${a}</b><div style="height:7px;background:#EEF2F7;border-radius:4px;margin-top:10px;width:70%"></div></div>`).join("")}</div></div></div>`;
+})();
+init();
+</script>
+</body>
+</html>
